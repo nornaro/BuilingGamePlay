@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlei8d6cryi5p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i5arm"]
+
+[node name="Tab" type="GridContainer"]
+columns = 6
+metadata/_tab_index = 0
+
+[node name="VScrollBar" type="VScrollBar" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/scroll = SubResource("StyleBoxEmpty_i5arm")
