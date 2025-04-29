@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://e1y6h4id4ed8"]
+[gd_scene load_steps=8 format=4 uid="uid://e1y6h4id4ed8"]
 
 [ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_kavnk"]
 [ext_resource type="Texture2D" uid="uid://dbbdwvj0o7c6v" path="res://addons/kaykit_halloween_bits/Assets/gltf/halloweenbits_texture.png" id="2_asoj5"]
+[ext_resource type="Script" uid="uid://cx4e0achefv1c" path="res://scripts/fit_mesh_to_camera.gd" id="3_asoj5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cmjqt"]
 resource_name = "HalloweenBits"
@@ -58,4 +59,5 @@ disabled = true
 [node name="SubViewport" type="SubViewport" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport"]
-transform = Transform3D(0.866025, -0.25, 0.433013, 0, 0.866025, 0.5, -0.5, -0.433013, 0.75, 3.90774, 7.31312, 6.73296)
+transform = Transform3D(0.866025, -0.25, 0.433013, 0, 0.866025, 0.5, -0.5, -0.433013, 0.75, 4, 7.35374, 7)
+script = ExtResource("3_asoj5")

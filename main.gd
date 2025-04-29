@@ -1,12 +1,10 @@
-# New file: res://scripts/create_inventory.gd
-@tool
-extends EditorScript
+extends Node
 
 var InventoryPanel: PackedScene = preload("res://inventory_panel.tscn")
 
-func _run():
+func _ready() -> void:
 	# Get the current scene root
-	var scene_root = get_scene()
+	var scene_root = get_tree().root
 	if not scene_root:
 		push_error("No scene open in editor")
 		return
@@ -38,7 +36,7 @@ func _run():
 		var inventory = InventoryPanel.instantiate()
 		inventory.name = category.capitalize()
 		InventoryTabs.add_child(inventory)
-		var grid = InventoryTabs.find_child("InventoryGrid", true, false)
+		var grid = inventory.find_child("InventoryGrid", true, false)
 		
 		# Set owner after adding to scene tree
 		inventory.owner = scene_root
@@ -49,8 +47,9 @@ func _run():
 			var button = TextureButton.new()
 			button.name = item
 			TextureButton.SIZE_SHRINK_CENTER
-			button.custom_minimum_size = Vector2(48, 48)
-			#button.stretch_mode = TextureButton.STRETCH_KEEP
+			button.custom_minimum_size = Vector2(72, 72)
+			button.stretch_mode = TextureButton.STRETCH_SCALE
+			button.ignore_texture_size = true
 			
 			# Set tooltip with formatted name
 			var item_name = item.get_basename().replace("_", " ").capitalize()
@@ -60,11 +59,12 @@ func _run():
 			# Try to load icon texture
 			#var icon_path = "res://addons/kaykit_character_pack_adventures/Assets/gltf/%s_icon.webp" % item
 			#var icon_path = "res://addons/"
-			#if ResourceLoader.exists(icon_path):
-				#button.texture_normal = load(icon_path)
+			var icon_path = "res://icon.svg"
+			if ResourceLoader.exists(icon_path):
+				button.texture_normal = load(icon_path)
 			
 			grid.add_child(button)
-			grid.add_child(TextureButton.new())
+			#grid.add_child(TextureButton.new())
 			print(button.get_parent())
 			button.owner = scene_root
 	

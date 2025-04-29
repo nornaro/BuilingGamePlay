@@ -1,0 +1,538 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj4qdy7wn1417"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wc5p8"]
+
+[node name="furniture" type="ScrollContainer"]
+metadata/_tab_index = 0
+
+[node name="Inventory" type="GridContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 6
+
+[node name="armchair" type="TextureButton" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+texture_normal = SubResource("ViewportTexture_wc5p8")
+
+[node name="armchair_pillows" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Armchair Pillows"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="bed_double_A" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Bed Double A"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="bed_double_B" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Bed Double B"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="bed_single_A" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Bed Single A"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="bed_single_B" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Bed Single B"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="book_set" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Book Set"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="book_single" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Book Single"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="cabinet_medium" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Cabinet Medium"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="cabinet_medium_decorated" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Cabinet Medium Decorated"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="cabinet_small" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Cabinet Small"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="cabinet_small_decorated" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Cabinet Small Decorated"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="cactus_medium_A" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Cactus Medium A"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="cactus_medium_B" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Cactus Medium B"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="cactus_small_A" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Cactus Small A"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="cactus_small_B" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Cactus Small B"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="chair_A" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Chair A"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="chair_A_wood" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Chair A Wood"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="chair_B" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Chair B"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="chair_B_wood" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Chair B Wood"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="chair_C" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Chair C"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="chair_stool" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Chair Stool"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="chair_stool_wood" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Chair Stool Wood"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="couch" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Couch"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="couch_pillows" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Couch Pillows"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="lamp_standing" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Lamp Standing"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="lamp_table" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Lamp Table"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="pictureframe_large_A" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Pictureframe Large A"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="pictureframe_large_B" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Pictureframe Large B"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="pictureframe_medium" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Pictureframe Medium"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="pictureframe_small_A" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Pictureframe Small A"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="pictureframe_small_B" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Pictureframe Small B"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="pictureframe_small_C" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Pictureframe Small C"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="pictureframe_standing_A" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Pictureframe Standing A"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="pictureframe_standing_B" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Pictureframe Standing B"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="pillow_A" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Pillow A"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="pillow_B" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Pillow B"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="rug_oval_A" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Rug Oval A"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="rug_oval_B" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Rug Oval B"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="rug_rectangle_A" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Rug Rectangle A"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="rug_rectangle_B" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Rug Rectangle B"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="rug_rectangle_stripes_A" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Rug Rectangle Stripes A"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="rug_rectangle_stripes_B" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Rug Rectangle Stripes B"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="shelf_A_big" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Shelf A Big"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="shelf_A_small" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Shelf A Small"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="shelf_B_large" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Shelf B Large"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="shelf_B_large_decorated" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Shelf B Large Decorated"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="shelf_B_small" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Shelf B Small"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="shelf_B_small_decorated" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Shelf B Small Decorated"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="table_low" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Table Low"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="table_medium" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Table Medium"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="table_medium_long" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Table Medium Long"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="table_small" type="Button" parent="Inventory"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "Table Small"
+flat = true
+text_overrun_behavior = 1
+autowrap_mode = 2
