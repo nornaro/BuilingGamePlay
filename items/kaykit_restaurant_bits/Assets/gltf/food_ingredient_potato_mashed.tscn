@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=4 uid="uid://cf3qfoieg06hb"]
+
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_8ge40"]
+[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="2_b8uq8"]
+[ext_resource type="Script" uid="uid://cb5o3yikauhsr" path="res://addons/papershot/papershot.gd" id="3_f2fne"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cdl7o"]
+resource_name = "restaurant"
+albedo_texture = ExtResource("2_b8uq8")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_a1f3h"]
+_surfaces = [{
+"aabb": AABB(-0.175884, 0.0256302, -0.419788, 0.602507, 0.21146, 0.635769),
+"format": 34896613377,
+"index_count": 96,
+"index_data": PackedByteArray("DQABAAIADgABAA0AAwABAA4ADQACAA8ADwACAAQADQAQAA4ADwAQAA0ADgARAAMADgAQABEAAwARAAUAEgAFABEAEQAQABIABwAFABIADwAEABMAEwAQAA8AEwAEAAYACQATAAYAEgAAAAcAEgAQAAAABwAAAAgAFAAIAAAAAAAQABQACgAIABQAFQATAAkAFQAQABMACwAVAAkAFAAQABYAFAAWAAoAFgAQABUAFgAVAAsACgAWAAwAFgALAAwA"),
+"lods": [0.206788, PackedByteArray("AAABAAIAAwABAAAAAAACAAQAAwAAAAUAAAAEAAYABwAFAAAABwAAAAgACQAAAAYACgAIAAAACwAAAAkACgAAAAwAAAALAAwA")],
+"name": "restaurant",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 23,
+"vertex_data": PackedByteArray("Nj2HkrKlAAA1swAARigAABTyAADnVgAA5GgAAAAAAAD//wAAr4sAABAbAAAmHwAAJ+8AAHLGAAAAAAAAs3cAALQiAABAsAAAn8kAAHHsAADzNAAALNIAAG+YAAD//wAA5lkAAIbxAADOtmbLa1EAALVkxr6LMwAAqMvG+v2DAAAzb///QKcAAEo4Jt1PRgAAdSkMx7R3AAA8yHjhbLAAAJlLxphDvQAA5a6CwyTRAAD5e/Kmed0AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qix7j"]
+resource_name = "food_ingredient_potato_mashed_Cylinder_077"
+_surfaces = [{
+"aabb": AABB(-0.175884, 0.0256302, -0.419788, 0.602507, 0.21146, 0.635769),
+"attribute_data": PackedByteArray("NMzyVyDRYGS/02BkBs5gZFTUYGTHymBkoNNgZKbJYGQZy2BkD9JgZNzLYGQC0GBkZs1gZEbROVbazZtWJdLLVP/LsFXHymBkAdKPVfLQd1bSzlRXzszBV2HLW1b/y7BVAdKPUUrOokgl0stQRtE5UvLQd1LazZtS0s5UU//LsFHOzMFTYctbUjTM8lM="),
+"format": 34896613399,
+"index_count": 96,
+"index_data": PackedByteArray("DQABAAIADgABAA0ADQACAA8AAwABAA4ADgAQAAMAAwAQABEADwACAAQADwAEABIAEgAEAAYACQASAAYAEwASAAkACwATAAkAFAATAAsAFAALAAwACgAUAAwAFQAUAAoACgAIABUAFQAIAAAABwAAAAgAFgAAAAcABwAFABYAFgAFABcAGAAZABoAGgAZABsAHAAZABgAGwAZAB0AHgAZABwAHQAZAB8AIAAZAB4AHwAZACEAIgAZACAAIQAZACIA"),
+"lods": [0.206788, PackedByteArray("AAABAAIAAwABAAAAAAACAAQAAwAAAAUAAAAEAAYABwAFAAAABwAAAAgACQAAAAYACgAIAAAACwAAAAkACgAAAAwAAAALAAwA")],
+"material": SubResource("StandardMaterial3D_cdl7o"),
+"name": "restaurant",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 35,
+"vertex_data": PackedByteArray("Nj2HkrKlwbA1swAARigzFBTyAADnVkgR5GgAAAAAABv//wAAr4ubEhAbAAAmH40QJ+8AAHLGpq8AAAAAs3ddvbQiAABAsL6vn8kAAHHskqDzNAAALNIgqm+YAAD//5GV5lkAAIbxoZ7OtmbLa1E1E7Vkxr6LM7YlqMvG+v2DvhJKOCbdT0awLBAbAAAmH6IWPMh44WywMbjlroLDJNGgp/l78qZ53RSgmUvGmEO9wqx1KQzHtHcUH0o4Jt1PRjUQPMh44WywXbgzb///QKcqSajLxvr9g6Y1zrZmy2tRfDTlroLDJNGcp7Vkxr6LM64l+XvypnndMKBKOCbdT0agKplLxphDvd6sdSkMx7R3Q742PYeSsqW3sYCku8I/3yWH3clZjCn7a4DEuuWLWPTQQZW1zCGknl7Qc6FiyzHDGzHkqN/Ehe3KYvu4NreO1CuMafgSfJa9So4C8pFgAvp2ZaPJOSjg2fQ8Ht+xnoywgL3F73Q2rvYgQprJ2ie97u2X0sGmoAfTF5ri2QY9HfmKfS7mBaJl6ZZT7q90veKj9cFWoWzC")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_a1f3h")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cyvyy"]
+size = Vector3(0.602507, 0.21146, 0.635769)
+
+[node name="food_ingredient_potato_mashed2" type="StaticBody3D"]
+script = ExtResource("1_8ge40")
+
+[node name="food_ingredient_potato_mashed" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_qix7j")
+skeleton = NodePath("")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125369, 0.13136, -0.101903)
+shape = SubResource("BoxShape3D_cyvyy")
+disabled = true
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1024, 1024)
+render_target_update_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(0.154251, -0.976206, 0.152405, 0, 0.154251, 0.988032, -0.988032, -0.152405, 0.0237935, 0.052865, 0.10573, 0.10573)
+current = true
+
+[node name="Papershot" type="Node" parent="SubViewport"]
+script = ExtResource("3_f2fne")
+file_format = 1

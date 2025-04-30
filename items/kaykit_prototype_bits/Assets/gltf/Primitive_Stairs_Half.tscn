@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=4 uid="uid://s5llurdmm535"]
+
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_yx0hs"]
+[ext_resource type="Texture2D" uid="uid://tn1iprvxegcn" path="res://addons/kaykit_prototype_bits/Assets/gltf/prototypebits_texture.png" id="2_bsdt4"]
+[ext_resource type="Script" uid="uid://cb5o3yikauhsr" path="res://addons/papershot/papershot.gd" id="3_cfa1c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymb4h"]
+resource_name = "prototype_texture"
+albedo_texture = ExtResource("2_bsdt4")
+roughness = 0.4
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7kvml"]
+_surfaces = [{
+"aabb": AABB(0, 1.49012e-07, -2, 2, 2, 4),
+"format": 34359742465,
+"index_count": 108,
+"index_data": PackedByteArray("AAABAAIAAAACAAMAAgABAAMAAAAEAAEABAAAAAUAAAADAAUABgABAAQABgAEAAUABwADAAEABgAHAAEACAAFAAMACAADAAkAAwAKAAkACgAIAAkABwAKAAMABQAIAAsABgAFAAsACgALAAgADAAHAAYABwANAAoABwAMAA0ADAAGAA4ABgALAA8ABgAPAA4AEAALAAoACwAQAA8AEAAKABEADQARAAoADQAQABEADQAPABAADwASAA4AEgAPAA0ADAAOABIAEgANABMADAATAA0ADAASABMA"),
+"name": "prototype_texture",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("AAAAQAIAAD8AAADAAAAAQAAAIDQAAABAAAAAQAIAAD8AAABAAADAPwIAAD8AAABAAAAAQAAAIDQAAADAAADAPwIAAD8AAADAAAAAAAAAIDQAAADAAAAAAAAAIDQAAABAAADAPwEAgD8AAADAAADAPwEAgD8AAABAAACAPwEAgD8AAABAAACAPwEAgD8AAADAAAAAAAEAAEAAAABAAAAAPwEAwD8AAABAAAAAAAEAAEAAAADAAAAAPwEAwD8AAADAAACAPwEAwD8AAADAAACAPwEAwD8AAABAAAAAPwEAAEAAAADAAAAAPwEAAEAAAABA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8u6ut"]
+resource_name = "Primitive_Stairs_Half_Cube_16434"
+_surfaces = [{
+"aabb": AABB(0, 1.49012e-07, -2, 2, 2, 4),
+"attribute_data": PackedByteArray("8DzHPWhtNT7wPMc9mDxHPvA8xz1obTU+8DzHPZg8Rz4AAIA9mDxnPvA8xz2YPGc+8DzHPZg8Zz4AAIA9mDxnPvA8xz1obRU+UG21PWhtFT5QbbU9aG0VPvA8xz1obRU+UG21PUCeIz5QbbU9aG01PlBttT1AniM+UG21PWhtNT54nqM9QJ4DPlBttT1AngM+UG21PUCeAz54nqM9QJ4DPnieoz0QzxE+eJ6jPUCeIz54nqM9EM8RPnieoz1AniM+oM+RPSCe4z14nqM9IJ7jPXieoz0gnuM9oM+RPSCe4z2gz5E9sP//PaDPkT0QzxE+oM+RPbD//z2gz5E9EM8RPgAAgD2w/789oM+RPbD/vz2gz5E9sP+/PQAAgD2w/789AACAPbD//z2gz5E9sP//PaDPkT0QzxE+AACAPZg8Rz54nqM9QJ4jPnieoz0QzxE+UG21PWhtNT5QbbU9QJ4jPvA8xz2YPEc+8DzHPWhtNT6gz5E9EM8RPqDPkT2w//89AACAPbD//z0AAIA9mDxHPnieoz1AniM+eJ6jPRDPET5QbbU9aG01PlBttT1AniM+8DzHPZg8Rz7wPMc9aG01PgAAgD2w//89AACAPZg8Rz4AAIA9sP//PQAAgD2YPEc+"),
+"format": 34359742487,
+"index_count": 108,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJwAkACYAJwAmACgAJgApACgAJwAoACoAKgAoACsAJwAqACwALQAsACoALgAvADAAMQAuADAAMQAyAC4AMgAzAC4AMQA0ADIANAA1ADIAMQA2ADQANgA3ADQAOAA5ADoAOAA7ADkA"),
+"material": SubResource("StandardMaterial3D_ymb4h"),
+"name": "prototype_texture",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 60,
+"vertex_data": PackedByteArray("AAAAQAIAAD8AAADAAAAAQAAAIDQAAABAAAAAQAIAAD8AAABAAAAAQAAAIDQAAADAAAAAAAAAIDQAAADAAAAAQAAAIDQAAABAAAAAQAAAIDQAAADAAAAAAAAAIDQAAABAAAAAQAIAAD8AAADAAADAPwIAAD8AAABAAADAPwIAAD8AAADAAAAAQAIAAD8AAABAAADAPwEAgD8AAADAAADAPwIAAD8AAABAAADAPwEAgD8AAABAAADAPwIAAD8AAADAAACAPwEAgD8AAABAAADAPwEAgD8AAADAAADAPwEAgD8AAABAAACAPwEAgD8AAADAAACAPwEAwD8AAADAAACAPwEAgD8AAABAAACAPwEAwD8AAABAAACAPwEAgD8AAADAAAAAPwEAwD8AAABAAACAPwEAwD8AAADAAACAPwEAwD8AAABAAAAAPwEAwD8AAADAAAAAPwEAAEAAAADAAAAAPwEAwD8AAABAAAAAPwEAAEAAAABAAAAAPwEAwD8AAADAAAAAAAEAAEAAAABAAAAAPwEAAEAAAADAAAAAPwEAAEAAAABAAAAAAAEAAEAAAADAAAAAAAEAAEAAAABAAAAAPwEAAEAAAABAAAAAPwEAwD8AAABAAAAAAAAAIDQAAABAAACAPwEAgD8AAABAAACAPwEAwD8AAABAAADAPwIAAD8AAABAAADAPwEAgD8AAABAAAAAQAAAIDQAAABAAAAAQAIAAD8AAABAAAAAPwEAwD8AAADAAAAAPwEAAEAAAADAAAAAAAEAAEAAAADAAAAAAAAAIDQAAADAAACAPwEAgD8AAADAAACAPwEAwD8AAADAAADAPwIAAD8AAADAAADAPwEAgD8AAADAAAAAQAAAIDQAAADAAAAAQAIAAD8AAADAAAAAAAEAAEAAAABAAAAAAAAAIDQAAADAAAAAAAEAAEAAAADAAAAAAAAAIDQAAABA////f////7////9/////v////3////+/////f////7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9///////+//3///////7//f///////v/9///////+/////f////7////9/////v////3////+/////f////7//f///////v/9///////+//3///////7//f///////v////3////+/////f////7////9/////v////3////+//3///////7//f///////v/9///////+//3///////7////9/////v////3////+/////f////7////9/////v/9///////+//3///////7//f///////v/9///////+//3//f/7//7//f/9/////v/9//3/+//+//3//f/7//7//f/9/////v/9//3////+//3//f/7//7//f/9/////v/9//3////+//3//f////7///////v//P/////////8///////7//z///////v//P/////////8//////////z///////v//P/////////8//////////z//////////PwAA/3////+/AAD/f////78AAP9/////vwAA/3////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_7kvml")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_03bfj"]
+size = Vector3(2, 2, 4)
+
+[node name="Primitive_Stairs_Half2" type="StaticBody3D"]
+script = ExtResource("1_yx0hs")
+
+[node name="Primitive_Stairs_Half" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_8u6ut")
+skeleton = NodePath("")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
+shape = SubResource("BoxShape3D_03bfj")
+disabled = true
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1024, 1024)
+render_target_update_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(0.154251, -0.976206, 0.152405, 0, 0.154251, 0.988032, -0.988032, -0.152405, 0.0237935, 0.5, 1, 1)
+current = true
+
+[node name="Papershot" type="Node" parent="SubViewport"]
+script = ExtResource("3_cfa1c")
+file_format = 1

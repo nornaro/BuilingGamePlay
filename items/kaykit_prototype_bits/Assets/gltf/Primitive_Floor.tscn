@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=4 uid="uid://deafgph20odm2"]
+
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_2ldvv"]
+[ext_resource type="Texture2D" uid="uid://tn1iprvxegcn" path="res://addons/kaykit_prototype_bits/Assets/gltf/prototypebits_texture.png" id="2_5p467"]
+[ext_resource type="Script" uid="uid://cb5o3yikauhsr" path="res://addons/papershot/papershot.gd" id="3_hswbf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eifas"]
+resource_name = "prototype_texture"
+albedo_texture = ExtResource("2_5p467")
+roughness = 0.4
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_y2fqs"]
+_surfaces = [{
+"aabb": AABB(-2, 1.49012e-07, -2, 4, 1, 4),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIAAwACAAEAAAAEAAEAAwAFAAAABQAEAAAAAwABAAYABQAHAAQAAwAHAAUABwABAAQAAwAGAAcABwAGAAEA"),
+"name": "prototype_texture",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAQAAAgD8AAADAAAAAQAAAIDQAAABAAAAAQAAAgD8AAABAAAAAwAAAgD8AAABAAAAAQAAAIDQAAADAAAAAwAAAgD8AAADAAAAAwAAAIDQAAABAAAAAwAAAIDQAAADA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_sxji0"]
+resource_name = "Primitive_Floor_Cube_16419"
+_surfaces = [{
+"aabb": AABB(-2, 1.49012e-07, -2, 4, 1, 4),
+"attribute_data": PackedByteArray("8DzHPUCeIz7wPMc9mDxHPvA8xz1AniM+8DzHPZg8Rz5ADOM8QJ4jPvA8xz2YPEc+QAzjPJg8Rz7wPMc9QJ4jPkAM4zyYPGc+8DzHPZg8Zz7wPMc9mDxnPkAM4zyYPGc+QAzjPECeIz5ADOM8mDxHPkAM4zxAniM+QAzjPJg8Rz5ADOM8QJ4DPvA8xz1AngM+8DzHPUCeAz5ADOM8QJ4DPkAM4zxAniM+8DzHPZg8Rz7wPMc9QJ4jPkAM4zyYPEc+"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_eifas"),
+"name": "prototype_texture",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAQAAAgD8AAADAAAAAQAAAIDQAAABAAAAAQAAAgD8AAABAAAAAQAAAIDQAAADAAAAAwAAAgD8AAABAAAAAQAAAIDQAAABAAAAAwAAAIDQAAABAAAAAQAAAgD8AAABAAAAAwAAAIDQAAADAAAAAQAAAIDQAAABAAAAAQAAAIDQAAADAAAAAwAAAIDQAAABAAAAAwAAAgD8AAABAAAAAwAAAIDQAAADAAAAAwAAAgD8AAADAAAAAwAAAIDQAAABAAAAAwAAAgD8AAABAAAAAQAAAgD8AAADAAAAAQAAAgD8AAABAAAAAwAAAgD8AAADAAAAAwAAAgD8AAADAAAAAQAAAIDQAAADAAAAAQAAAgD8AAADAAAAAwAAAIDQAAADA////f////7////9/////v////3////+/////f////7//f/9/////v/9//3////+//3//f////7//f/9/////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+/AAD/f////78AAP9/////vwAA/3////+/AAD/f////7//f///////v/9///////+//3///////7//f///////v/////////8//////////z//////////P/////////8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_y2fqs")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vrye6"]
+size = Vector3(4, 1, 4)
+
+[node name="Primitive_Floor2" type="StaticBody3D"]
+script = ExtResource("1_2ldvv")
+
+[node name="Primitive_Floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_sxji0")
+skeleton = NodePath("")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_vrye6")
+disabled = true
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1024, 1024)
+render_target_update_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(0.154251, -0.976206, 0.152405, 0, 0.154251, 0.988032, -0.988032, -0.152405, 0.0237935, 0.25, 0.5, 0.5)
+current = true
+
+[node name="Papershot" type="Node" parent="SubViewport"]
+script = ExtResource("3_hswbf")
+file_format = 1

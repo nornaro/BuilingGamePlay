@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=4 uid="uid://cn1rqrwqfktet"]
+
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_81o2a"]
+[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="2_jbnw2"]
+[ext_resource type="Script" uid="uid://cb5o3yikauhsr" path="res://addons/papershot/papershot.gd" id="3_nvu7e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f20uo"]
+resource_name = "restaurant"
+albedo_texture = ExtResource("2_jbnw2")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_14rwr"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1, 2),
+"format": 34359742465,
+"index_count": 114,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAwAEAAEAAAAFAAMAAwAFAAQAAAAGAAUABQAGAAcAAAAHAAYABQAHAAQAAAACAAcACAABAAQAAQAJAAIAAQAIAAkACAAEAAoACgAJAAgACwAEAAcABAALAAoADAAHAAIACwAHAAwAAgAJAA0ADAACAA0ADAAOAAsACgALAA4ADwAMAA0ADAAPAA4ACgAOABAAEAAOAA8ACgARAAkAEgAKABAAEgARAAoAEAAPABIAEQATAAkAEQASABMADQAJABMAEwASAA8ADwANABQADQATABQAEwAPABQA"),
+"name": "restaurant",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 21,
+"vertex_data": PackedByteArray("zcxMvwAAAAAAAIC/AACAP83MTD8AAIC/zcxMv83MTD8AAIC/AACAPwAAAAAAAIC/AACAP83MTD/NzEw/AACAPwAAAADNzEw/zcxMvwAAAADNzEw/zcxMv83MTD/NzEw/AACAPwAAgD8AAIC/MjNzvwAAgD8AAIC/AACAPwAAgD8zM3M/AACAP83MTD8zM3M/MjNzv83MTD8zM3M/MjNzv83MTD8AAIC/AACAP5qZWT8AAIA///9/v5qZWT8AAIA/AACAPzMzcz8AAIA/MjNzvwAAgD8zM3M///9/vzMzcz8AAIA///9/vzMzcz8AAIC///9/v5qZWT8AAIC/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_y7jau"]
+resource_name = "kitchencounter_outercorner_Cube_957"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1, 2),
+"attribute_data": PackedByteArray("WFRwP9E6cz+Slng/7iZiP1hUcD/uJmI/kpZ4P9E6cz+Slng/0TpzP5KWeD/uJmI/kpZ4P+4mYj+Slng/0DpzP1hUcD/ROns/kpZ4P9A6ez+Slng/0Tp7P1hUcD/QOns/65pSP+4mYj/QbVI/NPNeP9BtUj+wFWE/65pSP/bhXT87IlM/7iZiPwB6WT/uJmI/AHpZP/bhXT+Slng/0DpzP1hUcD/uJmI/kpZ4P+4mYj9YVHA/0DpzP1hUcD/ROnM/WFRwP+4mYj9YVHA/0DpzP1hUcD/uJmI/65pSP/XhWT/QbVI/NPNaP+uaUj/24Vk/0G1SPzPzWj/QbVI/sBVlP+uaUj/uJmY/0G1SP7AVZT/rmlI/7iZmP9BtUj80814/0G1SP7AVYT/QbVI/sBVhP9BtUj8z814/65pSP+4maj87IlM/7iZqP+uaUj/uJmo/OyJTP+4maj8Aelk/7iZqPwB6WT/uJmo/0G1SPzPzWj8Aelk/9eFZPwB6WT8z81o/65pSP/XhWT8Aelk/9eFVP+uaUj/24VU/AHpZP/bhVT/rmlI/9eFVP+uaUj/uJmY/AHpZP7AVZT8Aelk/7iZmP9BtUj+wFWU/AHpZPzPzXj/QbVI/sBVhP9BtUj8z814/AHpZP7AVYT8Aelk/9eFdPwB6WT+wFWE/AHpZPzPzXj8Aelk/7iZiPwB6WT/uJmI/AHpZP/bhXT8Aelk/7iZiPw=="),
+"format": 34359742487,
+"index_count": 114,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAAPAAwAEQAPABAAEQASAA8AEwAUABUAEwAWABQAFwAYABkAFwAaABgAGwAcAB0AGwAeABwAHwAgACEAHwAiACAAIwAkACUAIwAmACQAJwAoACkAJwAqACgAKwAqACcAKwAsACoALQAuAC8ALQAwAC4AMQAyADMAMQA0ADIANQA2ADcANQA4ADYAOQA6ADsAOQA8ADoAPQA+AD8APQBAAD4AQQBAAD0AQgBBAD0AQgBDAEEA"),
+"material": SubResource("StandardMaterial3D_f20uo"),
+"name": "restaurant",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 68,
+"vertex_data": PackedByteArray("zcxMvwAAAAAAAIC/AACAP83MTD8AAIC/zcxMv83MTD8AAIC/AACAPwAAAAAAAIC/AACAPwAAAAAAAIC/AACAP83MTD/NzEw/AACAP83MTD8AAIC/AACAPwAAAADNzEw/zcxMvwAAAAAAAIC/AACAPwAAAADNzEw/AACAPwAAAAAAAIC/zcxMvwAAAADNzEw/MjNzv83MTD8AAIC///9/vzMzcz8AAIC///9/v5qZWT8AAIC/MjNzvwAAgD8AAIC/zcxMv83MTD8AAIC/AACAP83MTD8AAIC/AACAPwAAgD8AAIC/AACAPwAAAADNzEw/zcxMv83MTD/NzEw/AACAP83MTD/NzEw/zcxMvwAAAADNzEw/zcxMvwAAAAAAAIC/zcxMv83MTD/NzEw/zcxMvwAAAADNzEw/zcxMv83MTD8AAIC/MjNzvwAAgD8zM3M///9/vzMzcz8AAIC/MjNzvwAAgD8AAIC///9/vzMzcz8AAIA///9/v5qZWT8AAIA/MjNzv83MTD8AAIC///9/v5qZWT8AAIC/MjNzv83MTD8zM3M///9/vzMzcz8AAIC///9/v5qZWT8AAIA///9/v5qZWT8AAIC///9/vzMzcz8AAIA/MjNzv83MTD8zM3M/zcxMv83MTD8AAIC/MjNzv83MTD8AAIC/zcxMv83MTD/NzEw/AACAP83MTD8zM3M/AACAP83MTD/NzEw///9/vzMzcz8AAIA/AACAPwAAgD8zM3M/AACAPzMzcz8AAIA/MjNzvwAAgD8zM3M/AACAPwAAgD8zM3M/MjNzvwAAgD8AAIC/AACAPwAAgD8AAIC/MjNzvwAAgD8zM3M/MjNzv83MTD8zM3M/AACAP5qZWT8AAIA/AACAP83MTD8zM3M///9/v5qZWT8AAIA/AACAPzMzcz8AAIA///9/v5qZWT8AAIA///9/vzMzcz8AAIA/AACAP5qZWT8AAIA/AACAPwAAgD8zM3M/AACAP5qZWT8AAIA/AACAPzMzcz8AAIA/AACAP83MTD8zM3M/AACAP83MTD/NzEw/AACAPwAAgD8AAIC/AACAP83MTD8AAIC//////////z/+/wAA////P/7/AAD///8//////////z////9/////v////3////+/////f////7////9/////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+///////7//z///////v//P//////+//8//v8AAP7//z/+/wAA////P/7/AAD///8//v8AAP///z//f/9/////v/9//3////+//3//f////7//f/9/////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+//z//v/7/AAB9JXyl/v8AAP8//7/+/wAAlx2Xnf7/AAD/P/8/////v4JafSX///+//z//P////7+PVXAq////v30lfKX///+/AAD/f////78AAP9/////v5cdl53///+/j1VwKv///7//fwAA////v4JafSX///+//38AAP///7//fwAA////v/9/AAD///+//3+Xnf///7//f/+/////v/9/fKX///+//3//v////7//f///////P/9///////8//3///////z//f///////P/9//z////+//3+CWv///7//f/8/////v/9/Z2L///+//398pf///7//f2di////v/9/l53///+//3+CWv///7////9/////v////3////+/////f////7////9/////v////3////+/////f////7////9/////vw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_14rwr")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5t8j8"]
+size = Vector3(2, 1, 2)
+
+[node name="kitchencounter_outercorner2" type="StaticBody3D"]
+script = ExtResource("1_81o2a")
+
+[node name="kitchencounter_outercorner" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_y7jau")
+skeleton = NodePath("")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, 0.5, 0)
+shape = SubResource("BoxShape3D_5t8j8")
+disabled = true
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1024, 1024)
+render_target_update_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(0.154251, -0.976206, 0.152405, 0, 0.154251, 0.988032, -0.988032, -0.152405, 0.0237935, 0.25, 0.5, 0.5)
+current = true
+
+[node name="Papershot" type="Node" parent="SubViewport"]
+script = ExtResource("3_nvu7e")
+file_format = 1

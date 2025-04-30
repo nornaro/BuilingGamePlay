@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=4 uid="uid://df4vh5tpyqnwt"]
+
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_j7ykc"]
+[ext_resource type="Texture2D" uid="uid://tn1iprvxegcn" path="res://addons/kaykit_prototype_bits/Assets/gltf/prototypebits_texture.png" id="2_leowe"]
+[ext_resource type="Script" uid="uid://cb5o3yikauhsr" path="res://addons/papershot/papershot.gd" id="3_6tso0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hcfbg"]
+resource_name = "prototype_texture"
+albedo_texture = ExtResource("2_leowe")
+roughness = 0.4
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qk3l8"]
+_surfaces = [{
+"aabb": AABB(-2, 1.49012e-07, -2, 4, 4, 4),
+"format": 34359742465,
+"index_count": 54,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAwAEAAIABAAAAAIABQADAAEABQAEAAMABgABAAAABQABAAcABwABAAYACAAEAAUACQAAAAQACAAJAAQAAAAKAAYACgAHAAYACQAKAAAABQAHAAoACAAKAAkABQAKAAgA"),
+"name": "prototype_texture",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 11,
+"vertex_data": PackedByteArray("AAAAQAIAAEAAAABAAAAAQAAAIDQAAADAAAAAQAAAIDQAAABAAAAAwAAAIDQAAADAAAAAwAAAIDQAAABAAAAAwAEAgEAAAADAAAAAQAEAgEAAAACAAAAAQAEAgEAAAADAAAAAwAEAgEAAAABAAAAAAAEAgEAAAABAAAAAAAEAgEAAAACA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_njqkp"]
+resource_name = "Primitive_Slope_Half_InnerCorner_Cube_16433"
+_surfaces = [{
+"aabb": AABB(-2, 1.49012e-07, -2, 4, 4, 4),
+"attribute_data": PackedByteArray("8DzHPbD//z3wPMc9mDxHPvA8xz2YPEc+8DzHPaAMYz3wPMc9oAxjPUAM4zyYPEc+8DzHPbD//z3wPMc9mDxHPgAAgD2gDGM9QAzjPKAMYz1ADOM8oAxjPUAM4zyYPEc+QAzjPJg8Rz5ADOM8oAxjPQAAgD1AGcY88DzHPUAZxjzwPMc9QBnGPEAM4zxAGcY8QAzjPEAZxjwAAIA9QBnGPEAM4zygDGM98DzHPZg8Rz7wPMc9oAxjPUAM4zyYPEc+8DzHPbD//z0AAIA9oAxjPfA8xz2gDGM9QAzjPJg8Zz7wPMc9mDxnPvA8xz2YPGc+QAzjPJg8Zz4AAIA9oAxjPQAAgD1QhrE98DzHPbD//z0="),
+"format": 34359742487,
+"index_count": 54,
+"index_data": PackedByteArray("AAABAAIAAwABAAAABAABAAMABQAGAAcACAAGAAUACQAIAAUACgALAAwADQALAAoADgAPABAAEQAPAA4AEQAOABIAEgAOABMAFAAVABYAFAAXABUAGAAZABoAGwAcAB0AGwAeABwAHwAgACEA"),
+"material": SubResource("StandardMaterial3D_hcfbg"),
+"name": "prototype_texture",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 34,
+"vertex_data": PackedByteArray("AAAAQAIAAEAAAABAAAAAQAAAIDQAAADAAAAAQAAAIDQAAABAAAAAQAEAgEAAAACAAAAAQAEAgEAAAADAAAAAwAAAIDQAAABAAAAAQAIAAEAAAABAAAAAQAAAIDQAAABAAAAAAAEAgEAAAABAAAAAwAEAgEAAAABAAAAAwAEAgEAAAADAAAAAwAAAIDQAAABAAAAAwAAAIDQAAADAAAAAwAEAgEAAAABAAAAAAAEAgEAAAACAAAAAQAEAgEAAAADAAAAAQAEAgEAAAACAAAAAwAEAgEAAAADAAAAAwAEAgEAAAABAAAAAAAEAgEAAAABAAAAAwAEAgEAAAADAAAAAQAAAIDQAAADAAAAAQAEAgEAAAADAAAAAwAAAIDQAAADAAAAAQAIAAEAAAABAAAAAAAEAgEAAAACAAAAAQAEAgEAAAACAAAAAwAAAIDQAAADAAAAAQAAAIDQAAABAAAAAQAAAIDQAAADAAAAAwAAAIDQAAABAAAAAAAEAgEAAAABAAAAAAAEAgEAAAACAAAAAQAIAAEAAAABA////f////z////9/////P////3////+/////f////z////9/////v/9//3/+//+//3//f/7//7//f/9/////v/9//3/+//+//3//f////78AAP9/////vwAA/3////+/AAD/f////78AAP9/////v/9///////+//3///////7//f///////v/9///////+//3///////7//f///////v/////////8//////////z//////////P/////////8//3//v////7//f/+/////v/9//7////+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//v/+/SJ4kT/+//79IniRP/7//v0ieJE8=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_qk3l8")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2ruqp"]
+size = Vector3(4, 4, 4)
+
+[node name="Primitive_Slope_Half_InnerCorner2" type="StaticBody3D"]
+script = ExtResource("1_j7ykc")
+
+[node name="Primitive_Slope_Half_InnerCorner" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_njqkp")
+skeleton = NodePath("")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_2ruqp")
+disabled = true
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1024, 1024)
+render_target_update_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(0.154251, -0.976206, 0.152405, 0, 0.154251, 0.988032, -0.988032, -0.152405, 0.0237935, 1, 2, 2)
+current = true
+
+[node name="Papershot" type="Node" parent="SubViewport"]
+script = ExtResource("3_6tso0")
+file_format = 1

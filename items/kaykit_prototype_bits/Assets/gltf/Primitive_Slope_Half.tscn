@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=4 uid="uid://dvxmokxv2pxxq"]
+
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_xugqm"]
+[ext_resource type="Texture2D" uid="uid://tn1iprvxegcn" path="res://addons/kaykit_prototype_bits/Assets/gltf/prototypebits_texture.png" id="2_rorgt"]
+[ext_resource type="Script" uid="uid://cb5o3yikauhsr" path="res://addons/papershot/papershot.gd" id="3_a4agj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ujut"]
+resource_name = "prototype_texture"
+albedo_texture = ExtResource("2_rorgt")
+roughness = 0.4
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jbyc8"]
+_surfaces = [{
+"aabb": AABB(-2, 1.49012e-07, -2, 4, 4, 4),
+"format": 34359742465,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIABAABAAAAAwAEAAAABQABAAQAAwACAAYABwABAAUACAAFAAQACAAHAAUAAwAIAAQABwAJAAEACQACAAEACAAJAAcACQAGAAIAAwAJAAgABgAJAAMA"),
+"name": "prototype_texture",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 10,
+"vertex_data": PackedByteArray("////PwIAAEAAAADAAAAAwAAAIDT///+/////PwAAIDQAAADAAAAAQAIAAED///8/Lr27swEAgEAAAADAAAAAwAEAgED///+/AAAAQAAAIDT///8/////vwEAgEAAAABALr27MwEAgEAAAABA////vwAAIDQAAABA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_t068j"]
+resource_name = "Primitive_Slope_Half_Cube_16431"
+_surfaces = [{
+"aabb": AABB(-2, 1.49012e-07, -2, 4, 4, 4),
+"attribute_data": PackedByteArray("8DzHPbD//z1ADOM8mDxHPvA8xz2YPEc+AACAPaAMYz1ADOM8oAxjPfA8xz2w//89AACAPaAMYz3wPMc9sP//PQAAgD2gDGM98DzHPbD//z3wPMc9mDxHPvA8xz2YPEc+8DzHPbD//z0AAIA9oAxjPUAM4zyYPEc+QAzjPKAMYz3wPMc9sP//PfA8xz2YPEc+QAzjPJg8Zz7wPMc9mDxnPkAM4zyYPGc+8DzHPZg8Zz4AAIA9QBnGPEAM4zxAGcY8AACAPUAZxjxADOM8QBnGPEAM4zygDGM9QAzjPJg8Rz5ADOM8oAxjPUAM4zyYPEc+"),
+"format": 34359742487,
+"index_count": 48,
+"index_data": PackedByteArray("AAABAAIAAwABAAAABAABAAMABQAGAAcABQAIAAYACQAKAAsACQAMAAoADQAOAA8AEAAOAA0AEQAOABAAEgATABQAEgAVABMAFgAXABgAFgAZABcAGgAbABwAGgAdABsA"),
+"material": SubResource("StandardMaterial3D_1ujut"),
+"name": "prototype_texture",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 30,
+"vertex_data": PackedByteArray("////PwIAAEAAAADAAAAAwAAAIDT///+/////PwAAIDQAAADALr27swEAgEAAAADAAAAAwAEAgED///+/AAAAQAIAAED///8/Lr27swEAgEAAAADA////PwIAAEAAAADALr27MwEAgEAAAABAAAAAQAIAAED///8/////PwAAIDQAAADAAAAAQAAAIDT///8/////PwIAAEAAAADALr27MwEAgEAAAABA////vwAAIDQAAABA////vwEAgEAAAABAAAAAQAIAAED///8/AAAAQAAAIDT///8/////vwAAIDQAAABA////PwAAIDQAAADAAAAAwAAAIDT///+/AAAAQAAAIDT///8/Lr27MwEAgEAAAABAAAAAwAEAgED///+/Lr27swEAgEAAAADA////vwEAgEAAAABA////vwEAgEAAAABAAAAAwAAAIDT///+/AAAAwAEAgED///+/////vwAAIDQAAABAAAD///7//z8AAP///v//PwAA//////8/AAD///7//z8AAP//////P/+//7////+//7//v////7//v/+/////v/+//7////+/////f////7////9/////v////3////+/////f////7//f/9//v//v/9//3/+//+//3//f////7//f/9//v//v/9//3////+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//f///////v/9///////+//3///////7//f///////vwAA/3////8/AAD/f////z8AAP9/////PwAA/3////8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_jbyc8")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q1v8k"]
+size = Vector3(4, 4, 4)
+
+[node name="Primitive_Slope_Half2" type="StaticBody3D"]
+script = ExtResource("1_xugqm")
+
+[node name="Primitive_Slope_Half" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_t068j")
+skeleton = NodePath("")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_q1v8k")
+disabled = true
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1024, 1024)
+render_target_update_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(0.154251, -0.976206, 0.152405, 0, 0.154251, 0.988032, -0.988032, -0.152405, 0.0237935, 1, 2, 2)
+current = true
+
+[node name="Papershot" type="Node" parent="SubViewport"]
+script = ExtResource("3_a4agj")
+file_format = 1

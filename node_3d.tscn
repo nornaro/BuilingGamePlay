@@ -213,16 +213,15 @@ grow_horizontal = 2
 grow_vertical = 2
 current_tab = 0
 
-[node name="Character" type="Panel" parent="InventoryTabs" instance=ExtResource("7_wc5p8")]
+[node name="Character" parent="InventoryTabs" instance=ExtResource("7_wc5p8")]
 layout_mode = 2
-metadata/_tab_index = 0
 
-[node name="Dungeon" type="Panel" parent="InventoryTabs" instance=ExtResource("7_wc5p8")]
+[node name="Dungeon" parent="InventoryTabs" instance=ExtResource("7_wc5p8")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="Furniture" type="Panel" parent="InventoryTabs" instance=ExtResource("7_wc5p8")]
+[node name="Furniture" parent="InventoryTabs" instance=ExtResource("7_wc5p8")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
@@ -252,7 +251,7 @@ theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 4
 columns = 24
 
-[node name="Prototype" type="Panel" parent="InventoryTabs" instance=ExtResource("7_wc5p8")]
+[node name="Prototype" parent="InventoryTabs" instance=ExtResource("7_wc5p8")]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 4

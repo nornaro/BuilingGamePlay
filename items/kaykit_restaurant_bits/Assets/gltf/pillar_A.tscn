@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=4 uid="uid://dbdk8ocybrm7o"]
+
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_soukr"]
+[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="2_rr0k0"]
+[ext_resource type="Script" uid="uid://cb5o3yikauhsr" path="res://addons/papershot/papershot.gd" id="3_ey6xo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p2uyu"]
+resource_name = "restaurant"
+albedo_texture = ExtResource("2_rr0k0")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_57s22"]
+_surfaces = [{
+"aabb": AABB(-0.3, 0, -0.3, 0.6, 4.1, 0.6),
+"format": 34359742465,
+"index_count": 132,
+"index_data": PackedByteArray("AAABAAIAAwACAAEABAACAAMAAwABAAUABgAEAAMABgADAAUABQABAAcABQAHAAYABgAIAAQABAAIAAIABgAHAAgACQAHAAEAAAAJAAEACgAIAAcACQAKAAcACwACAAgACwAAAAIACgALAAgAAAAMAAkACQANAAoACQAMAA0AAAAOAAwACwAOAAAACgAPAAsACwAPAA4ACgANAA8ADgAQAAwADAARAA0ADAAQABEADQASAA8ADQARABIADwATAA4ADgATABAADwASABMAFAASABEAFQAQABMAFgATABIAFgAVABMAFAAWABIAFQAXABAAFwARABAAFwAVABYAFwAUABEAFwAWABQA"),
+"name": "restaurant",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("mpmZvmdmBkCamZk+mpmZvgAAgECamZm+mpmZvgAAgECamZk+zcxMvjMzg0DNzEw+zcxMPjMzg0DNzEw+zcxMvjMzg0DNzEy+zcxMPjMzg0DNzEy+mpmZPgAAgECamZm+mpmZPgAAgECamZk+mpmZvmdmBkCamZm+mpmZPmdmBkCamZm+mpmZPmdmBkCamZk+zcxMvgAAAEDNzEy+zcxMPgAAAEDNzEy+zcxMvgAAAEDNzEw+zcxMPgAAAEDNzEw+mpmZvjQz8z+amZm+mpmZPjQz8z+amZm+mpmZPjQz8z+amZk+mpmZvjQz8z+amZk+mpmZPgAAAACamZm+mpmZvgAAAACamZk+mpmZPgAAAACamZk+mpmZvgAAAACamZm+")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wk8vc"]
+resource_name = "pillar_A_Cube_149"
+_surfaces = [{
+"aabb": AABB(-0.3, 0, -0.3, 0.6, 4.1, 0.6),
+"attribute_data": PackedByteArray("lrsOP9jj0j6Wuw4/DAi/Ppa7Dj8MCL8+lrsOP9jj0j6CWBE/fPytPpa7Dj8MCK8+XkEPP3z8rT5K3hE/DAivPoJYET98/K0+St4RPwwIrz6CWBE/fPytPkreET8MCK8+XkEPP3z8rT5K3hE/DAivPoJYET98/K0+lrsOPwwIrz5eQQ8/fPytPpa7Dj8MCK8+XkEPP3z8rT6Wuw4/DAivPpa7Dj/Y49I+St4RPwwIvz6Wuw4/DAi/PkreET/Y49I+vYKePmrvqz4rd50+/PqsPr2Cnj5q76s+K3edPvz6rD6Wuw4/2OPiPl5BDz9q7+M+lrsOP9jj4j5eQQ8/au/jPr2Cnj5q76s+k7yjPvz6rD4DsaI+au+rPit3nT78+qw+lrsOP9jj4j6CWBE/au/jPkreET/Y4+I+XkEPP2rv4z4DsaI+au+rPpO8oz78+qw+A7GiPmrvqz6TvKM+/PqsPkreET/Y4+I+glgRP2rv4z5K3hE/2OPiPoJYET9q7+M+A7GiPmrvqz4rd50+/PqsPr2Cnj5q76s+k7yjPvz6rD5K3hE/2OPiPl5BDz9q7+M+lrsOP9jj4j6CWBE/au/jPoJYET98/K0+XkEPP3z8rT5eQQ8/fPytPoJYET98/K0+St4RP9jj0j5K3hE/DAi/PkreET8MCL8+St4RP9jj0j4rd50+yNbQPpO8oz78+rw+K3edPvz6vD6TvKM+yNbQPkreET/Y49I+lrsOPwwIvz5K3hE/DAi/Ppa7Dj/Y49I+K3edPsjW4D6TvKM+yNbgPpO8oz7I1uA+K3edPsjW4D4rd50+yNbQPit3nT78+rw+K3edPvz6vD4rd50+yNbQPpO8oz7I1tA+k7yjPvz6vD6TvKM+/Pq8PpO8oz7I1tA+k7yjPsjW0D4rd50+/Pq8PpO8oz78+rw+K3edPsjW0D4="),
+"format": 34359742487,
+"index_count": 132,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEARABFAEYARABHAEUASABJAEoASABLAEkATABNAE4ATABPAE0AUABRAFIAUABTAFEAVABVAFYAVABXAFUA"),
+"material": SubResource("StandardMaterial3D_p2uyu"),
+"name": "restaurant",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 88,
+"vertex_data": PackedByteArray("mpmZvmdmBkCamZk+mpmZvgAAgECamZm+mpmZvgAAgECamZk+mpmZvmdmBkCamZm+zcxMPjMzg0DNzEw+mpmZvgAAgECamZk+zcxMvjMzg0DNzEw+mpmZPgAAgECamZk+zcxMPjMzg0DNzEy+mpmZPgAAgECamZk+zcxMPjMzg0DNzEw+mpmZPgAAgECamZm+zcxMvjMzg0DNzEy+mpmZPgAAgECamZm+zcxMPjMzg0DNzEy+mpmZvgAAgECamZm+zcxMvjMzg0DNzEw+mpmZvgAAgECamZm+zcxMvjMzg0DNzEy+mpmZvgAAgECamZk+mpmZvmdmBkCamZm+mpmZPgAAgECamZm+mpmZvgAAgECamZm+mpmZPmdmBkCamZm+zcxMvgAAAEDNzEw+mpmZvjQz8z+amZm+zcxMvgAAAEDNzEy+mpmZvjQz8z+amZk+mpmZvmdmBkCamZk+zcxMvgAAAEDNzEy+mpmZvmdmBkCamZm+zcxMvgAAAEDNzEw+zcxMvgAAAEDNzEy+mpmZPjQz8z+amZm+zcxMPgAAAEDNzEy+mpmZvjQz8z+amZm+mpmZvmdmBkCamZm+zcxMPgAAAEDNzEy+mpmZPmdmBkCamZm+zcxMvgAAAEDNzEy+zcxMPgAAAEDNzEy+mpmZPjQz8z+amZk+zcxMPgAAAEDNzEw+mpmZPjQz8z+amZm+mpmZPmdmBkCamZm+zcxMPgAAAEDNzEw+mpmZPmdmBkCamZk+zcxMPgAAAEDNzEy+zcxMPgAAAEDNzEw+mpmZvjQz8z+amZk+zcxMvgAAAEDNzEw+mpmZPjQz8z+amZk+mpmZPmdmBkCamZk+zcxMvgAAAEDNzEw+mpmZvmdmBkCamZk+zcxMPgAAAEDNzEw+zcxMPjMzg0DNzEy+zcxMvjMzg0DNzEw+zcxMvjMzg0DNzEy+zcxMPjMzg0DNzEw+mpmZPmdmBkCamZm+mpmZPgAAgECamZk+mpmZPgAAgECamZm+mpmZPmdmBkCamZk+mpmZvgAAAACamZm+mpmZPjQz8z+amZm+mpmZvjQz8z+amZm+mpmZPgAAAACamZm+mpmZPmdmBkCamZk+mpmZvgAAgECamZk+mpmZPgAAgECamZk+mpmZvmdmBkCamZk+mpmZvgAAAACamZm+mpmZPgAAAACamZk+mpmZPgAAAACamZm+mpmZvgAAAACamZk+mpmZvgAAAACamZk+mpmZvjQz8z+amZm+mpmZvjQz8z+amZk+mpmZvgAAAACamZm+mpmZPgAAAACamZm+mpmZPjQz8z+amZk+mpmZPjQz8z+amZm+mpmZPgAAAACamZk+mpmZPgAAAACamZk+mpmZvjQz8z+amZk+mpmZPjQz8z+amZk+mpmZvgAAAACamZk+AAD/f////78AAP9/////vwAA/3////+/AAD/f////7//f/+/////v/9//7////+//3//v////7//f/+/////v/+//7////+//7//v////7//v/+/////v/+//7////+//7///////z//v///////P/+///////8//7///////z//P/+/////v/8//7////+//z//v////7//P/+/////v/////////8//////////z//////////P/////////8//z//v////7//P/+/////v/8//7////+//z//v////7//P/8/////v/8//z////+//z//P////7//P/8/////v/+///////8//7///////z//v///////P/+///////8//78AAP///z//vwAA////P/+/AAD///8//78AAP///z//v/+/////v/+//7////+//7//v////7//v/+/////v/+//z////+//7//P////7//v/8/////v/+//z////+//3//v////7//f/+/////v/9//7////+//3//v////7//f/8/////v/9//z////+//3//P////7//f/8/////v/9///////+//3///////7//f///////v/9///////+/////f////7////9/////v////3////+/////f////7//////////P/////////8//////////z//////////P/9//3////+//3//f////7//f/9/////v/9//3////+//38AAP///7//fwAA////v/9/AAD///+//38AAP///78AAP9/////vwAA/3////+/AAD/f////78AAP9/////v////3////+/////f////7////9/////v////3////+//3//f////7//f/9/////v/9//3////+//3//f////78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_57s22")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ve8xu"]
+size = Vector3(0.6, 4.1, 0.6)
+
+[node name="pillar_A2" type="StaticBody3D"]
+script = ExtResource("1_soukr")
+
+[node name="pillar_A" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_wk8vc")
+skeleton = NodePath("")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.05, 0)
+shape = SubResource("BoxShape3D_ve8xu")
+disabled = true
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1024, 1024)
+render_target_update_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(0.154251, -0.976206, 0.152405, 0, 0.154251, 0.988032, -0.988032, -0.152405, 0.0237935, 1.025, 2.05, 2.05)
+current = true
+
+[node name="Papershot" type="Node" parent="SubViewport"]
+script = ExtResource("3_ey6xo")
+file_format = 1

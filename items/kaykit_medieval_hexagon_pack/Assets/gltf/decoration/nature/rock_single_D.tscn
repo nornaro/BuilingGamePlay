@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=4 uid="uid://cdnkl4b5mw6a7"]
+
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_77q0p"]
+[ext_resource type="Texture2D" uid="uid://b04r4op73jrd" path="res://addons/kaykit_medieval_hexagon_pack/Assets/gltf/decoration/nature/hexagons_medieval.png" id="2_vq2ln"]
+[ext_resource type="Script" uid="uid://cb5o3yikauhsr" path="res://addons/papershot/papershot.gd" id="3_ukc1t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6kt7"]
+resource_name = "hexagons_medieval"
+albedo_texture = ExtResource("2_vq2ln")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gc83h"]
+_surfaces = [{
+"aabb": AABB(-0.141977, -9.68124e-10, -0.129701, 0.286616, 0.162931, 0.24975),
+"format": 34896613377,
+"index_count": 66,
+"index_data": PackedByteArray("AAAKAAIABQACAAoAAwACAAUAAwAAAAIABQAKAAgABgADAAUABgAFAAgACAAKAAEAAAABAAoABgAIAAkACAABAAkABgAEAAMABAAAAAMABgAJAAcABgAHAAQACQABAAsACQALAAcADAABAAAABAAMAAAADAALAAEABwAMAAQABwALAAwA"),
+"lods": [0.0623067, PackedByteArray("AAABAAIAAwAAAAIABAAAAAMABAABAAAAAwACAAUABQACAAEABgAEAAMABgADAAUABgAHAAQABwABAAQABgAFAAgABQABAAgABgAJAAcACQABAAcABgAIAAkACAABAAkA")],
+"name": "hexagons_medieval",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 13,
+"vertex_data": PackedByteArray("06n//8bKAABQYP//EDoAAMHH//9xgQAADcsAAP//AABvJgAA/v8AAP//AABFfgAAhH4AADWGAAAAAAAATJEAADS9AADWEQAAAUkAAAAAAAD/of//JUQAAAo3FbEzjAAAxEwVscbKAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1kr4a"]
+resource_name = "rock_single_D_rock_single_D"
+_surfaces = [{
+"aabb": AABB(-0.141977, -9.68124e-10, -0.129701, 0.286616, 0.162931, 0.24975),
+"attribute_data": PackedByteArray("b1NPjA9ST4z+U0+MDlSVrv5TT5gLVZWub1NPmEJQla4PUk+Y+lCVrp9Rla5vU0+YDlSVrgtVla4PUk+YzFOVrp9Rla7+U0+YrFSWrg5Ulq4LVZau2VOWrvpQlq6dU5auzFOWrjJRlq5CUJaunVCWrp9Rlq7LUZauSVNPjLFRLZNJUS2TsVEtn0lRLZ/6UJWusVEtn0lTT5g="),
+"format": 34896613399,
+"index_count": 66,
+"index_data": PackedByteArray("AAAeAAIAAAABAB4AHwABAAAAHwAgAAEAAwAEAAUAAwAGAAQABwAhAAkABwAiACEACgAiAAcACgAIACIAIwALAAwAIwAkAAsADQAlAA8ADQARACUADwAlAA4ADwAOABAAEgATABQAFQAWABMAFwAUABgAGQAaABYAGwAcABoAHQAYABwA"),
+"lods": [0.0623067, PackedByteArray("AAABAAIAAwAEAAUAAwAGAAQABwAIAAkACgAIAAcACQAIAAsACQALAAwADQAOAA8ADwAOABAADQARAA4AEgATABQAFQAWABMAFwAUABgAGQAaABYAGwAcABoAHQAYABwA")],
+"material": SubResource("StandardMaterial3D_a6kt7"),
+"name": "hexagons_medieval",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 38,
+"vertex_data": PackedByteArray("06n//8bKzcFQYP//EDpQwsHH//9xgf+/DcsAAP//26/Bx///cYHbr///AABFftuv06n//8bK268AAAAATJG6E1Bg//8QOpMLbyYAAP7/7rMBSQAAAAAzDNOp///GyvKODcsAAP//747//wAARX5oC1Bg//8QOrYMNL0AANYRXA0BSQAAAAC2DMHH//9xgWgLhH4AADWG/z8NywAA////P///AABFfv8/hH4AADWG/z9vJgAA/v//P4R+AAA1hv8/NL0AANYR/z+EfgAANYb/PwAAAABMkf+/hH4AADWG/z8BSQAAAAD/P4R+AAA1hv8//6H//yVE/7/ETBWxxsrbtgo3FbEzjOvAxEwVscbKx7cKNxWxM4yYG28mAAD+//KOxEwVscbKTo//of//JURdDb62Oqq2tCir/v//f1emcBdXpnAXV6ZwF1emcBdZ+SM/2vbnSOGch8/X96xJf+cKkwfuP5X9z5aG1fY+gWngooTV9j6B/c+WhgAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/f/7//38rqRe/SaSwySKmM79V9HU82ucJk2zYOJN/4KCE")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_gc83h")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x347n"]
+size = Vector3(0.286616, 0.162931, 0.24975)
+
+[node name="rock_single_D2" type="StaticBody3D"]
+script = ExtResource("1_77q0p")
+
+[node name="rock_single_D" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_1kr4a")
+skeleton = NodePath("")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00133078, 0.0814656, -0.00482582)
+shape = SubResource("BoxShape3D_x347n")
+disabled = true
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1024, 1024)
+render_target_update_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(0.154251, -0.976206, 0.152405, 0, 0.154251, 0.988032, -0.988032, -0.152405, 0.0237935, 0.0407328, 0.0814656, 0.0814656)
+current = true
+
+[node name="Papershot" type="Node" parent="SubViewport"]
+script = ExtResource("3_ukc1t")
+file_format = 1

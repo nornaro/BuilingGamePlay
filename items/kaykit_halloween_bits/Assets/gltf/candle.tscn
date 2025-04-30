@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=4 uid="uid://lcfmf4t1cx7g"]
+
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_ihj57"]
+[ext_resource type="Texture2D" uid="uid://dbbdwvj0o7c6v" path="res://addons/kaykit_halloween_bits/Assets/gltf/halloweenbits_texture.png" id="2_e27nb"]
+[ext_resource type="Script" uid="uid://cb5o3yikauhsr" path="res://addons/papershot/papershot.gd" id="3_twrka"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_panl6"]
+resource_name = "HalloweenBits"
+albedo_texture = ExtResource("2_e27nb")
+roughness = 0.6
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_elvlj"]
+_surfaces = [{
+"aabb": AABB(-0.150467, 0, -0.152788, 0.300934, 0.785684, 0.296362),
+"format": 34359742465,
+"index_count": 198,
+"index_data": PackedByteArray("AAAWABcAAAAEABYABQAEAAAABAAYABYABQAAAAMAAwAAABcABQAHAAQABAAHABgAFgAOABcAFgAZAA4AGAAZABYAFwAOABoAAwAXAAIAFwAaAAIABgADAAIABQADAAYAGwAOABkAGwAaAA4AGAAcABkAGwAZABwAAQAcABgABwABABgAAQAdABwAGwAcAB0ABwAIAAEABQAIAAcAHgAdAAEACAAeAAEAHgAfAB0AGwAdAB8ACAAJAB4ABQAJAAgADAAfAB4ACQAMAB4AGwAfAA0ADAANAB8ACQAKAAwABQAKAAkAIAANAAwACgAgAAwABQALAAoACgALACAABQAGAAsACwAGACEACwAhACAABgACACEAIAAiAA0AIQAiACAAGwANACIAAgAjACEAIQAjACIAGwAiACMAAgAaACMAGwAjABoADwAQABEAEAAVABEADwARABMAEQAVABMADwASABAAEgAVABAADwAUABIAFAAVABIADwATACQADwAkABQAEwAVACQAJAAVABQA"),
+"lods": [0.0950182, PackedByteArray("AAABAAIAAwAAAAIAAAAEAAEABQAAAAMABQAEAAAABQADAAYABgADAAIABQAHAAQABAAHAAEABQAIAAcABwAIAAEABQAJAAgACAAJAAEABQAKAAkABQAGAAsABQALAAoACwAGAAIACQAKAAwACgALAAwACQAMAAEACwACAAwADAANAAEAAgANAAwAAQANAA4AAgAOAA0AAQAOAAIADwAQABEADwASABAADwARABMADwAUABIADwATABQAEQAVABMAEwAVABQAEAAVABEAFAAVABIAEgAVABAA")],
+"name": "HalloweenBits",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 37,
+"vertex_data": PackedByteArray("MfrasQAAAACBdBy+e34HPsX7Kj+DdJw9hSLJvcX7Kj/9s++9hSLJvQAAAAD9s++9giLJPQAAAAABtO+9zcxMsgAAAACamRmxBRQavgAAAABYWNm8BBQaPgAAAABfWNm8e34HPgAAAACDdJw9EAtWPQAAAAAKBRM+EAtWvQAAAAAKBRM+f34HvgAAAACAdJw9EAtWvcX7Kj8KBRM+lVoavUh3OD+yCtQ9WREIskh3OD9xpuG9dsaisnWvIj+BtPsxZwTUPHp2Rz8D0XS8rf2dsnp2Rz8K0fS8ZwTUPHp2Rz8W0XQ8fQTUvHp2Rz8D0XS84G60snp2Rz8R0fQ8yWqespMiST8iHgwygiLJPcX7Kj8BtO+9MfrascX7Kj+BdBy+BBQaPsX7Kj9fWNm8jQuRPUh3OD+r26y9kQuRvUh3OD+o26y9ZmaGsqbFMT/NzEyx1TjePUh3OD8pvJy8MmvDPUh3OD90pmE9EAtWPcX7Kj8KBRM+lFoaPUh3OD+yCtQ9f34HvsX7Kj+AdJw9BRQavsX7Kj9YWNm8OGvDvUh3OD9vpmE92TjevUh3OD8kvJy8fQTUvHp2Rz8T0XQ8")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hr3fl"]
+resource_name = "candle_Cylinder_112"
+_surfaces = [{
+"aabb": AABB(-0.150467, 0, -0.152788, 0.300934, 0.785684, 0.296362),
+"attribute_data": PackedByteArray("DIMQP5DpSD77zBY/sKyAPTzYCz+wrIA9PNgLP5DpSD5UXAk/kOlIPtwtFT+Q6Ug+HTkKP5DpSD7uqRc/kOlIPk8HDj+wrIA9+8wWP5DpSD5PBw4/kOlIPsn+Ej+Q6Ug++8wWP+BlHT2SuA4/ALPqPAyDED8As+o8TwcOP+BlHT082As/4GUdPQyDED+4RXg+3C0VP7hFeD4MgxA/uEV4PvpuFD+4RXg+7qkXP7hFeD4ilww/uEV4PjzYCz+4RXg+WoUWP7hFeD77zBY/uEV4Pr7LFT+4RXg+yf4SP7hFeD7dgAo/uEV4PlRcCT+4RXg+OZkSP7hFeD5PBw4/uEV4PuBsDj+4RXg+HTkKP7hFeD5fOgs/uEV4PhAAbD/iDfc+sA9zP/Bw1j4QAGw/8HDWPnfwZD/wcNY+EABsP+IN9z6wD3M/8HDWPrAPcz/wcNY+EABsP/Bw1j4QAGw/4g33PnfwZD/wcNY+d/BkP/Bw1j538GQ/8HDWPhAAbD/wcNY+EABsP/Bw1j6wD3M/8HDWPhAAbD/wcNY+sA9zP/Bw1j6wD3M/8HDWPtwtFT+wrIA9DIMQP7CsgD3uqRc/sKyAPVRcCT+wrIA9yf4SP7CsgD0dOQo/sKyAPe6pFz/gZR09wuATPwCz6jzcLRU/4GUdPTurFT8As+o8DIMQP+BlHT1WJQ0/ALPqPAwMFT8As+o8yf4SP+BlHT3cWgs/ALPqPIZNEj8As+o8VFwJP+BlHT03+gs/ALPqPB05Cj/gZR09DIMQP0CxFz4MgxA/sAKcPcLgEz+wApw9ViUNP7ACnD07qxU/sAKcPdxaCz+wApw9DAwVP7ACnD03+gs/sAKcPYZNEj+wApw9krgOP7ACnD0QAGw/4g33PhAAbD/wcNY+EABsP+IN9z6wD3M/8HDWPhAAbD/wcNY+EABsP+IN9z538GQ/8HDWPnfwZD/wcNY+d/BkP/Bw1j4="),
+"format": 34359742487,
+"index_count": 198,
+"index_data": PackedByteArray("AAA1ADYAAAAFADUAAwAAADYABQA3ADUAAwA2AAIABQAHADcABAADAAIABwABADcABAACADgABwAJAAEABgAEADgACQA5AAEABgA4ADoACQALADkACgAGADoACwAIADkACgA6AAgACwAKAAgAOwA8AD0APQA8AA4AOwA+ADwAPQAOAD8ADAA+ADsAPwAOAEAADABBAD4APwBAABAAQgBBAAwAEABAAEMAQgBEAEEAEABDAEUADwBEAEIARQBDAEYADwANAEQARQBGAEcARwANAA8ARwBGAA0ASABJAEoASABLAEkASABKAEwASABNAEsASABMAE4ASABPAE0ASABOAFAASABRAE8ASABQAFEAEQASABMAFAAVABIAFgATABcAGAAZABUAGgAbABkAHAAXAB0AHgAfABsAIAAhAB8AIgAdACEAUgAkAFMAVABVACkAJwBWACgAVwBYACoALQAuAFkAWQAuAC8AMgAwAC0ALwAwADEANAAzADIAMQAzADQAKwAsAFoAIwAlACYA"),
+"lods": [0.0950182, PackedByteArray("AAABAAIAAwAAAAIABAADAAIAAAAFAAEABgAEAAIABQAHAAEABgACAAgABwAJAAEACgAGAAgACQALAAEACwAKAAgACwAIAAEADAANAA4ADwANAAwADAAOABAAEAANAA8AEAAOAA0AEQASABMAFAAVABIAFgATABcAGAAZABUAGgAbABkAHAAXAB0AHgAfABsAIAAhAB8AIgAdACEAIwAkACUAIwAlACYAJwAoACkAJwAqACgAKwAsACoALQAuAC8ALwAwADEAMgAwAC0AMQAzADQANAAzADIA")],
+"material": SubResource("StandardMaterial3D_panl6"),
+"name": "HalloweenBits",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 91,
+"vertex_data": PackedByteArray("MfrasQAAAACBdBy+e34HPsX7Kj+DdJw9hSLJvcX7Kj/9s++9hSLJvQAAAAD9s++9BRQavgAAAABYWNm8giLJPQAAAAABtO+9f34HvgAAAACAdJw9BBQaPgAAAABfWNm8EAtWvcX7Kj8KBRM+e34HPgAAAACDdJw9EAtWvQAAAAAKBRM+EAtWPQAAAAAKBRM+e34HPsX7Kj+DdJw9lVoavUh3OD+yCtQ9WREIskh3OD9xpuG9EAtWvcX7Kj8KBRM+hSLJvcX7Kj/9s++9zcxMsgAAAACamRmxgiLJPQAAAAABtO+9MfrasQAAAACBdBy+zcxMsgAAAACamRmxBBQaPgAAAABfWNm8zcxMsgAAAACamRmxhSLJvQAAAAD9s++9zcxMsgAAAACamRmxe34HPgAAAACDdJw9zcxMsgAAAACamRmxEAtWPQAAAAAKBRM+zcxMsgAAAACamRmxBRQavgAAAABYWNm8zcxMsgAAAACamRmxEAtWvQAAAAAKBRM+zcxMsgAAAACamRmxf34HvgAAAACAdJw9zcxMsgAAAACamRmxdsaisnWvIj+BtPsxZwTUPHp2Rz8D0XS8rf2dsnp2Rz8K0fS8fQTUvHp2Rz8D0XS8dsaisnWvIj+BtPsxZwTUPHp2Rz8W0XQ8ZwTUPHp2Rz8D0XS84G60snp2Rz8R0fQ8dsaisnWvIj+BtPsxfQTUvHp2Rz8D0XS8fQTUvHp2Rz8D0XS8yWqespMiST8iHgwy4G60snp2Rz8R0fQ8yWqespMiST8iHgwyZwTUPHp2Rz8W0XQ8rf2dsnp2Rz8K0fS8yWqespMiST8iHgwyZwTUPHp2Rz8D0XS8giLJPcX7Kj8BtO+9MfrascX7Kj+BdBy+BBQaPsX7Kj9fWNm8BRQavsX7Kj9YWNm8EAtWPcX7Kj8KBRM+f34HvsX7Kj+AdJw9BBQaPsX7Kj9fWNm8jQuRPUh3OD+r26y9giLJPcX7Kj8BtO+91TjePUh3OD8pvJy8MfrascX7Kj+BdBy+kQuRvUh3OD+o26y9MmvDPUh3OD90pmE9EAtWPcX7Kj8KBRM+2TjevUh3OD8kvJy8lFoaPUh3OD+yCtQ9BRQavsX7Kj9YWNm8OGvDvUh3OD9vpmE9f34HvsX7Kj+AdJw9ZmaGsqbFMT/NzEyxWREIskh3OD9xpuG9jQuRPUh3OD+r26y9kQuRvUh3OD+o26y91TjePUh3OD8pvJy82TjevUh3OD8kvJy8MmvDPUh3OD90pmE9OGvDvUh3OD9vpmE9lFoaPUh3OD+yCtQ9lVoavUh3OD+yCtQ9dsaisnWvIj+BtPsxrf2dsnp2Rz8K0fS8dsaisnWvIj+BtPsxZwTUPHp2Rz8W0XQ84G60snp2Rz8R0fQ8dsaisnWvIj+BtPsxfQTUvHp2Rz8T0XQ8fQTUvHp2Rz8T0XQ8fQTUvHp2Rz8T0XQ8AAD+/////z9iwduY//+S6D4YqND//8wiAACYxf//zCIAAC+T//+XCf//mMWYxf8/2S7/f9mu/7///y+TAABn9tJkKJrX3f+/JdH/f///kujXXf9/193/vyei/3///xPRYsHbmP//kugPa4ax193/vz45/v////8/0mQomtfd/78+GKjQ///MIv9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v+kOZCn//5IoFfFkKSXR/z/pDmQp//+SKOkOZCn//5IoY6kVcf//kqhjqRVx//+SqHTsdWz///+/m1YVcSXR/7+KE3Vs////v4oTdWz///+/kWJW7f///7//f/7/////v/9/Cen///8//3/+/////7+okpDi////P/WW/v////+//3/+/////79tnVbt////v8DnqNCYxf8/sx/+/////z+r40OrLgsqh1McQ6tQ9U8KLJsomv//E9GcPtuY2a7/v6vjQ6suCyqHTtHm2pjF/z/A56jQmMX/P13L7b+tEquBsx/+/////z+wLuba//8yXfaym6/+/5LoLJsomv//E9GhNO2/p3xWye+UhrH//xPRUxxDq6pxlsUITZuv2a7/v5w+25jZrv+//3/+//7//7//f3Ln////v11x7N+Yxf+/oY7s3///zKKIaGXk5fc0CHaXZeQb+ZmVqWAh7P//kmhVnyHs2a7/PyViB/j//+su2Z0H+Nfd/z8V8WQpJdH/PxXxZCkl0f8/dOx1bP///7907HVs////v2OpFXH//5Kom1YVcSXR/7+bVhVxJdH/v1ZtkOL///8/ihN1bP///78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_elvlj")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bqa3g"]
+size = Vector3(0.300934, 0.785684, 0.296362)
+
+[node name="candle2" type="StaticBody3D"]
+script = ExtResource("1_ihj57")
+
+[node name="candle" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_hr3fl")
+skeleton = NodePath("")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49012e-08, 0.392842, -0.00460713)
+shape = SubResource("BoxShape3D_bqa3g")
+disabled = true
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1024, 1024)
+render_target_update_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(0.154251, -0.976206, 0.152405, 0, 0.154251, 0.988032, -0.988032, -0.152405, 0.0237935, 0.196421, 0.392842, 0.392842)
+current = true
+
+[node name="Papershot" type="Node" parent="SubViewport"]
+script = ExtResource("3_twrka")
+file_format = 1
