@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://bot5ln15ekrls"]
+[gd_scene load_steps=7 format=4 uid="uid://dmygrqbru713i"]
 
-[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_1hnw3"]
-[ext_resource type="Texture2D" uid="uid://r05knra18sb4" path="res://addons/kaykit_furniture_bits/Assets/gltf/furniturebits_texture.png" id="2_yegwx"]
-[ext_resource type="Script" uid="uid://cb5o3yikauhsr" path="res://addons/papershot/papershot.gd" id="3_nr000"]
+[ext_resource type="Texture2D" uid="uid://r05knra18sb4" path="res://addons/kaykit_furniture_bits/Assets/gltf/furniturebits_texture.png" id="1_3hl4j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj5lr"]
 resource_name = "furniture_texture"
-albedo_texture = ExtResource("2_yegwx")
+albedo_texture = ExtResource("1_3hl4j")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_e5gsf"]
@@ -43,29 +41,21 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_e5gsf")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_jhfd0"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_3hl4j"]
 size = Vector3(2.4, 0.5, 1.5)
 
-[node name="table_low2" type="StaticBody3D"]
-script = ExtResource("1_1hnw3")
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dvrdp"]
+points = PackedVector3Array(-1.00008, 0.319988, -0.75, -0.930071, 0.0287784, -0.621231, -1.10016, 0.319988, -0.723277, -1.00008, 0.479982, -0.75, 0.999843, 0.319988, -0.75, -0.930071, 0, -0.551782, -0.950039, 0.0379307, -0.600822, -1.17322, 0.319988, -0.65001, 0.929836, 0.0287784, -0.621231, -1.10016, 0.479982, -0.723277, -0.997494, 0.5, -0.730031, 0.999843, 0.479982, -0.75, 1.09992, 0.319988, -0.723277, -0.930071, 0, 0.551635, -0.950039, 0.0115505, -0.536071, 0.929836, 0, -0.551782, -1.2, 0.319988, -0.55002, -1.17322, 0.479982, -0.65001, 1.17298, 0.319988, -0.65001, 0.949804, 0.0379307, -0.600822, -1.15536, 0.5, -0.639732, -1.08982, 0.5, -0.705364, 0.997259, 0.5, -0.730031, 1.09992, 0.479982, -0.723277, -0.930071, 0.0287784, 0.621085, -0.950039, 0.0379307, 0.600675, -0.950039, 0.0115505, 0.535924, 0.929836, 0, 0.551635, 0.949804, 0.0115505, -0.536071, -1.2, 0.319988, 0.549873, -1.2, 0.479982, -0.55002, 1.17298, 0.479982, -0.65001, 1.2, 0.319988, -0.55002, -1.18003, 0.5, -0.547377, 1.08959, 0.5, -0.705364, 1.15513, 0.5, -0.639732, -1.00008, 0.319988, 0.75, -1.10016, 0.319988, 0.72313, -1.17322, 0.319988, 0.649863, 0.929836, 0.0287784, 0.621085, 0.949804, 0.0115505, 0.535924, 0.949804, 0.0379307, 0.600675, -1.2, 0.479982, 0.549873, 1.2, 0.479982, -0.55002, 1.2, 0.319988, 0.549873, -1.18003, 0.5, 0.54723, 1.1798, 0.5, -0.547377, -1.00008, 0.479982, 0.75, 0.999843, 0.319988, 0.75, -1.10016, 0.479982, 0.72313, -1.17322, 0.479982, 0.649863, 1.17298, 0.319988, 0.649863, 1.09992, 0.319988, 0.72313, -1.15536, 0.5, 0.639585, 1.2, 0.479982, 0.549873, 1.1798, 0.5, 0.54723, -0.997494, 0.5, 0.729885, -1.08982, 0.5, 0.705217, 0.999843, 0.479982, 0.75, 1.17298, 0.479982, 0.649863, 1.09992, 0.479982, 0.72313, 1.15513, 0.5, 0.639585, 0.997259, 0.5, 0.729885, 1.08959, 0.5, 0.705217)
+
+[node name="table_low" type="StaticBody3D"]
 
 [node name="table_low" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_cp7lm")
 skeleton = NodePath("")
 
-[node name="Collision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
-shape = SubResource("BoxShape3D_jhfd0")
+[node name="AABBCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_3hl4j")
 disabled = true
 
-[node name="SubViewport" type="SubViewport" parent="."]
-size = Vector2i(1024, 1024)
-render_target_update_mode = 1
-
-[node name="Camera3D" type="Camera3D" parent="SubViewport"]
-transform = Transform3D(0.154251, -0.976206, 0.152405, 0, 0.154251, 0.988032, -0.988032, -0.152405, 0.0237935, 0.125, 0.25, 0.25)
-current = true
-
-[node name="Papershot" type="Node" parent="SubViewport"]
-script = ExtResource("3_nr000")
-file_format = 1
+[node name="ConvexCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_dvrdp")

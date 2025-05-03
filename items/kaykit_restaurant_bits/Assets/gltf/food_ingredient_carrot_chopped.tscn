@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://cwo0sxxkvg51n"]
+[gd_scene load_steps=7 format=4 uid="uid://b4lqeslyi364i"]
 
-[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_52h3s"]
-[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="2_xwvop"]
-[ext_resource type="Script" uid="uid://cb5o3yikauhsr" path="res://addons/papershot/papershot.gd" id="3_6tmo1"]
+[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="1_fdb1j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mutss"]
 resource_name = "restaurant"
-albedo_texture = ExtResource("2_xwvop")
+albedo_texture = ExtResource("1_fdb1j")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_hg4a6"]
@@ -43,29 +41,21 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hg4a6")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_6hfd7"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_fdb1j"]
 size = Vector3(1.3317, 0.558674, 0.566287)
 
-[node name="food_ingredient_carrot_chopped2" type="StaticBody3D"]
-script = ExtResource("1_52h3s")
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8y2yv"]
+points = PackedVector3Array(-0.307457, 0.272893, -0.283143, -0.708687, 0.199887, -0.267733, -0.711033, 0.251893, -0.278986, -0.715074, 0.303244, -0.26535, -0.293118, 0.41371, -0.245228, 0.133141, 0.347047, -0.208754, 0.0704402, 0.243526, -0.241016, 0.1218, 0.211863, -0.241016, 0.246158, -4.61508e-05, -0.209309, -0.332224, 0.0289375, -0.141572, -0.708817, 0.153732, -0.20371, -0.74675, 0.186598, -0.232923, -0.762393, 0.247847, -0.241404, -0.754311, 0.310134, -0.230096, -0.84986, 0.442748, -0.0680697, -0.819618, 0.493442, -0.0566508, -0.769823, 0.495083, -0.077493, -0.44107, 0.414257, -0.220229, -0.333397, 0.513403, -0.136694, -0.233024, 0.505528, -0.138024, 0.179025, 0.422842, -0.120508, 0.1845, 0.315384, -0.208754, 0.350441, 0.0662336, -0.181261, 0.246158, 0.0662336, -0.209309, 0.350441, -4.61508e-05, -0.181261, -0.336134, -0.00879595, 0, 0.141744, -4.61508e-05, -0.181261, -0.789246, 0.157122, 0.093291, -0.820009, 0.170356, 0.127326, -0.774646, 0.193981, -0.188245, -0.479654, 0.0347343, 0, -0.789897, 0.244839, -0.183977, -0.864851, 0.385601, -0.0566508, -0.865894, 0.449475, 0.00182924, -0.822877, 0.507169, 0.00182924, -0.759134, 0.52259, 0.00182924, -0.431684, 0.50684, -0.12716, -0.329747, 0.549878, 0, -0.229244, 0.542332, -5.54323e-05, 0.195841, 0.450568, 0, 0.230385, 0.391179, -0.120508, 0.426829, 0.0662336, -0.104654, 0.426829, -4.61508e-05, -0.104654, -0.332224, 0.0289375, 0.141572, -0.755354, 0.13656, 0.156871, 0.454855, -4.61508e-05, 0, 0.426829, -4.61508e-05, 0.104599, 0.350441, -4.61508e-05, 0.181205, 0.246158, -4.61508e-05, 0.209253, 0.141744, -4.61508e-05, 0.181205, -0.802672, 0.163192, 0.177214, -0.827179, 0.221706, 0.183921, -0.839823, 0.219464, 0.12145, -0.876844, 0.378273, 0.00182924, -0.864851, 0.385601, 0.0603093, -0.84986, 0.442748, 0.0717282, -0.819618, 0.493442, 0.0603093, -0.769823, 0.495083, 0.0811515, -0.333397, 0.513403, 0.136638, -0.233024, 0.505528, 0.137969, 0.179025, 0.422842, 0.120452, 0.230385, 0.391179, 0.120452, 0.24707, 0.418905, 0, 0.454855, 0.0662336, 0, -0.729283, 0.167731, 0.219785, -0.775819, 0.178231, 0.220617, 0.426829, 0.0662336, 0.104599, 0.350441, 0.0662336, 0.181205, 0.246158, 0.0662336, 0.209253, 0.1218, 0.211863, 0.24096, -0.307457, 0.272893, 0.283143, -0.321796, 0.132021, 0.245173, -0.78703, 0.228816, 0.232923, -0.793808, 0.280166, 0.220617, -0.824181, 0.285088, 0.177214, -0.753529, 0.306033, 0.219785, -0.44107, 0.414257, 0.220173, -0.431684, 0.50684, 0.127104, -0.293118, 0.41371, 0.245173, 0.133141, 0.347047, 0.208699, 0.1845, 0.315384, 0.208699, -0.730847, 0.238769, 0.243676, 0.0704402, 0.243526, 0.24096)
+
+[node name="food_ingredient_carrot_chopped" type="StaticBody3D"]
 
 [node name="food_ingredient_carrot_chopped" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_eb3cn")
 skeleton = NodePath("")
 
-[node name="Collision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.210994, 0.270541, 0)
-shape = SubResource("BoxShape3D_6hfd7")
+[node name="AABBCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_fdb1j")
 disabled = true
 
-[node name="SubViewport" type="SubViewport" parent="."]
-size = Vector2i(1024, 1024)
-render_target_update_mode = 1
-
-[node name="Camera3D" type="Camera3D" parent="SubViewport"]
-transform = Transform3D(0.154251, -0.976206, 0.152405, 0, 0.154251, 0.988032, -0.988032, -0.152405, 0.0237935, 0.139669, 0.279337, 0.279337)
-current = true
-
-[node name="Papershot" type="Node" parent="SubViewport"]
-script = ExtResource("3_6tmo1")
-file_format = 1
+[node name="ConvexCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_8y2yv")

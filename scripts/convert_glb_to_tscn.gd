@@ -1,91 +1,88 @@
-# Edit file: res://convert_glb_to_tscn.gd
+# New file: res://scripts/convert_glb_to_tscn.gd
 @tool
 extends EditorScript
 
-var MakeIcon:PackedScene = preload("res://make_icon.tscn")
-
 func _run():
-	var base_path = "res://addons/"
-	var output_base = "res://items/"
-	var dir = DirAccess.open(base_path)
-	if dir == null:
-		push_error("Cannot open base path: %s" % base_path)
+	var glb_files := find_glb_files_in_addons()
+	if glb_files.is_empty():
+		push_error("No GLB files found in Kaykit addons")
 		return
+	
+	# Get the Papershot node from the current scene
+	var papershot = get_scene().find_child("Papershot")
+	if not papershot:
+		push_error("Papershot node not found in scene")
+		return
+	
+	for glb_path in glb_files:
+		print("Processing: ", glb_path)
+		convert_glb_to_tscn(glb_path, papershot)
 
-	# Ensure output directory exists
-	DirAccess.make_dir_recursive_absolute(output_base)
+func find_glb_files_in_addons() -> Array[String]:
+	var glb_files: Array[String] = []
+	var dir := DirAccess.open("res://addons/")
+	
+	if not dir:
+		push_error("Failed to access addons directory")
+		return glb_files
+	
+	dir.list_dir_begin()
+	var addon_name := dir.get_next()
+	
+	while addon_name != "":
+		if dir.current_is_dir() and addon_name.begins_with("Kaykit"):
+			var kaykit_dir := DirAccess.open("res://addons/" + addon_name)
+			if kaykit_dir:
+				_find_glb_files_recursive("res://addons/" + addon_name, glb_files)
+		addon_name = dir.get_next()
+	
+	dir.list_dir_end()
+	return glb_files
 
-	for folder in dir.get_directories():
-		if folder.begins_with("kaykit_"):
-			var full_path = base_path + folder + "/"
-			recursive_process_dir(full_path, output_base)
+func _find_glb_files_recursive(path: String, glb_files: Array[String]) -> void:
+	var dir := DirAccess.open(path)
+	if not dir:
+		return
+	
+	dir.list_dir_begin()
+	var file_name := dir.get_next()
+	
+	while file_name != "":
+		if dir.current_is_dir():
+			if file_name != "." and file_name != "..":
+				_find_glb_files_recursive(path + "/" + file_name, glb_files)
+		elif file_name.get_extension() == "glb":
+			glb_files.append(path + "/" + file_name)
+		file_name = dir.get_next()
+	
+	dir.list_dir_end()
 
-func recursive_process_dir(path, output_base):
-	var dir = DirAccess.open(path)
-	if dir == null:
-		push_error("Cannot open folder: %s" % path)
+func convert_glb_to_tscn(glb_path: String, papershot: Node) -> void:
+	# Load the GLB scene
+	var glb_scene = load(glb_path)
+	if not glb_scene:
+		push_error("Failed to load GLB scene: " + glb_path)
 		return
 	
-	# Get relative path within addons folder
-	var rel_path = path.replace("res://addons/", "")
+	# Create a temporary scene to render
+	var temp_scene = glb_scene.instantiate()
 	
-	# Create matching output directory structure
-	var output_path = output_base.path_join(rel_path)
-	DirAccess.make_dir_recursive_absolute(output_path)
+	# Use Papershot to render the icon
+	var icon_path = glb_path.get_basename() + "_icon.webp"
+	var result = await papershot.capture_node(temp_scene, icon_path)
 	
-	for file in dir.get_files():
-		if file.ends_with(".glb") or file.ends_with(".gltf"):
-			process_glb(path + file, output_path)
-	
-	for subdir in dir.get_directories():
-		recursive_process_dir(path + subdir + "/", output_base)
-
-func process_glb(path, output_path):
-	var scene = load(path)
-	if not scene:
-		push_error("Could not load: %s" % path)
+	if not result:
+		push_error("Failed to capture icon for: " + glb_path)
 		return
 	
-	var inst = scene.instantiate()
+	# Save the TSCN scene
+	var tscn_path = glb_path.get_basename() + ".tscn"
+	var packed_scene = PackedScene.new()
+	packed_scene.pack(temp_scene)
+	var error = ResourceSaver.save(packed_scene, tscn_path)
 	
-	# Convert root to StaticBody3D
-	var static_body = StaticBody3D.new()
-	static_body.name = inst.name
-	static_body.transform = inst.transform
-	
-	# Add cube.gd script to StaticBody3D
-	var script = load("res://cube.gd")
-	if script:
-		static_body.set_script(script)
-	
-	# Find MeshInstance3D
-	var mesh_node: MeshInstance3D = null
-	var mesh_instances = inst.find_children("", "MeshInstance3D", true, false)
-	if mesh_instances.size() > 0:
-		mesh_node = mesh_instances[0]
-	
-	if not mesh_node:
-		push_warning("No MeshInstance3D found in %s" % path)
+	if error != OK:
+		push_error("Failed to save scene to: " + tscn_path)
 		return
 	
-	var mesh = mesh_node.mesh
-	if not mesh:
-		push_warning("No mesh in MeshInstance3D at %s" % path)
-		return
-	
-	# Create collision
-	var aabb = mesh.get_aabb()
-	var shape = BoxShape3D.new()
-	shape.size = aabb.size
-	
-	var col_shape = CollisionShape3D.new()
-	col_shape.name = "Collision"
-	col_shape.disabled = true
-	col_shape.shape = shape
-	col_shape.transform.origin = aabb.position + aabb.size * 0.5
-	
-	# Add to static body
-	static_body.add_child(col_shape)
-	static_body.get_node_or_null("SubViewport").queue_free()
-	static_body.add_child(MakeIcon.instantiate())
-	print(static_body.name + " MakeIcon added")
+	print("Successfully converted %s to %s and %s" % [glb_path, tscn_path, icon_path])

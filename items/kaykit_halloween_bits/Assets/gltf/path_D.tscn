@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://cb0cjb4n387gg"]
+[gd_scene load_steps=7 format=4 uid="uid://basuvr20p23ke"]
 
-[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_e0bxi"]
-[ext_resource type="Texture2D" uid="uid://dbbdwvj0o7c6v" path="res://addons/kaykit_halloween_bits/Assets/gltf/halloweenbits_texture.png" id="2_kycan"]
-[ext_resource type="Script" uid="uid://cb5o3yikauhsr" path="res://addons/papershot/papershot.gd" id="3_2kc7x"]
+[ext_resource type="Texture2D" uid="uid://dbbdwvj0o7c6v" path="res://addons/kaykit_halloween_bits/Assets/gltf/halloweenbits_texture.png" id="1_fjnk2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ogon"]
 resource_name = "HalloweenBits"
-albedo_texture = ExtResource("2_kycan")
+albedo_texture = ExtResource("1_fjnk2")
 roughness = 0.6
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_8n4dr"]
@@ -43,29 +41,21 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8n4dr")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_nm5gu"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_fjnk2"]
 size = Vector3(1.65562, 0.1, 1.70657)
 
-[node name="path_D2" type="StaticBody3D"]
-script = ExtResource("1_e0bxi")
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4yyn6"]
+points = PackedVector3Array(0.839135, 0.0499902, -0.00816303, 0.839135, 0, -0.00816303, 0.835408, 0.0499902, -0.0926899, 0.801051, 0.1, -0.0460832, 0.458939, 0.1, 0.830256, 0.509502, 0.0499902, 0.834766, 0.835408, 0, -0.0926899, 0.509502, 0, 0.834766, 0.668809, 0.0499902, -0.666002, 0.618732, 0.1, -0.673185, 0.240481, 0.1, 0.82491, 0.446461, 0.0499902, 0.881874, 0.668809, 0, -0.666002, 0.446461, 0, 0.881874, 0.633803, 0.0499902, -0.721462, 0.507396, 0.0499902, -0.74084, 0.485841, 0.0999902, -0.693565, -0.441149, 0.0999902, -0.776421, -0.615851, 0.1, -0.744515, -0.32641, 0.0999902, 0.754081, -0.257209, 0.0999902, 0.783148, 0.271272, 0.0499902, 0.877531, -0.452007, 0.1, 0.22487, 0.633803, 0, -0.721462, 0.271272, 0, 0.877531, 0.507396, 0, -0.74084, -0.475344, 0.0499902, -0.824699, -0.57485, 0.0499902, -0.806657, -0.661552, 0.0499902, -0.764728, -0.76673, 0.0499902, -0.671849, -0.727187, 0.1, -0.646123, -0.373083, 0.0499902, 0.735038, -0.339212, 0.0499902, 0.80286, -0.275522, 0.0499902, 0.829755, -0.524611, 0.1, 0.15354, -0.562209, 0.1, 0.0733569, -0.777588, 0.1, -0.506136, -0.798494, 0.0499902, -0.450843, -0.275522, 0, 0.829755, -0.475344, 0, -0.824699, -0.57485, 0, -0.806657, -0.661552, 0, -0.764728, -0.816321, 0.0499902, -0.533699, -0.76673, 0, -0.671849, -0.373083, 0, 0.735038, -0.339212, 0, 0.80286, -0.798494, 0, -0.450843, -0.816321, 0, -0.533699)
+
+[node name="path_D" type="StaticBody3D"]
 
 [node name="path_D" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_4r6p8")
 skeleton = NodePath("")
 
-[node name="Collision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0114881, 0.05, 0.0285877)
-shape = SubResource("BoxShape3D_nm5gu")
+[node name="AABBCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_fjnk2")
 disabled = true
 
-[node name="SubViewport" type="SubViewport" parent="."]
-size = Vector2i(1024, 1024)
-render_target_update_mode = 1
-
-[node name="Camera3D" type="Camera3D" parent="SubViewport"]
-transform = Transform3D(0.154251, -0.976206, 0.152405, 0, 0.154251, 0.988032, -0.988032, -0.152405, 0.0237935, 0.025, 0.05, 0.05)
-current = true
-
-[node name="Papershot" type="Node" parent="SubViewport"]
-script = ExtResource("3_2kc7x")
-file_format = 1
+[node name="ConvexCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_4yyn6")

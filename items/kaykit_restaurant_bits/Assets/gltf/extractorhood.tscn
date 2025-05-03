@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://c5xpkvybh7tat"]
+[gd_scene load_steps=7 format=4 uid="uid://du7pyrbdnn8qu"]
 
-[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_7fr8c"]
-[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="2_epglp"]
-[ext_resource type="Script" uid="uid://cb5o3yikauhsr" path="res://addons/papershot/papershot.gd" id="3_lsxba"]
+[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="1_yufqe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1a3sd"]
 resource_name = "restaurant"
-albedo_texture = ExtResource("2_epglp")
+albedo_texture = ExtResource("1_yufqe")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_r2m2r"]
@@ -43,29 +41,21 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_r2m2r")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_24uqn"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_yufqe"]
 size = Vector3(2, 2, 1.60887)
 
-[node name="extractorhood2" type="StaticBody3D"]
-script = ExtResource("1_7fr8c")
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yewdm"]
+points = PackedVector3Array(0.5, 4, 0.966643, 1, 2.5, 1.46634, 0.5, 4, 0, 0.466523, 4, 0.999873, 1, 2.5, 0, 0.966132, 2.5, 1.49989, 0.965936, 2.29992, 1.49989, 1, 2.29992, 1.46603, -0.5, 4, 0, -0.275842, 2.32341, 1.60887, -0.466719, 4, 0.999873, 1, 2.02995, 0, -0.275842, 2.18285, 1.60887, 1, 2.02995, 1.46556, 0.965348, 2.02995, 1.49989, -1, 2.5, 0, -0.5, 4, 0.966643, -0.724354, 2.32341, 1.60887, -1, 2.5, 1.46634, -0.966327, 2.5, 1.49989, 0.969851, 2, 0.0299222, -1, 2.02995, 0, -0.724354, 2.18285, 1.60887, 0.952428, 2, 1.45264, -0.965544, 2.02995, 1.49989, -1, 2.29992, 1.46603, -0.966132, 2.29992, 1.49989, -0.970047, 2, 0.0299222, -1, 2.02995, 1.46556, -0.952623, 2, 1.45264)
+
+[node name="extractorhood" type="StaticBody3D"]
 
 [node name="extractorhood" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_bjkc0")
 skeleton = NodePath("")
 
-[node name="Collision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0.804434)
-shape = SubResource("BoxShape3D_24uqn")
+[node name="AABBCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_yufqe")
 disabled = true
 
-[node name="SubViewport" type="SubViewport" parent="."]
-size = Vector2i(1024, 1024)
-render_target_update_mode = 1
-
-[node name="Camera3D" type="Camera3D" parent="SubViewport"]
-transform = Transform3D(0.154251, -0.976206, 0.152405, 0, 0.154251, 0.988032, -0.988032, -0.152405, 0.0237935, 0.5, 1, 1)
-current = true
-
-[node name="Papershot" type="Node" parent="SubViewport"]
-script = ExtResource("3_lsxba")
-file_format = 1
+[node name="ConvexCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_yewdm")

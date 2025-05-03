@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://dj5ch6ql2pfxf"]
+[gd_scene load_steps=7 format=4 uid="uid://by0nsaqsd6xi"]
 
-[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_uiwfm"]
-[ext_resource type="Texture2D" uid="uid://cvkrtw5xxo3v7" path="res://addons/kaykit_space_base_bits/Assets/gltf/spacebits_texture.png" id="2_h1huf"]
-[ext_resource type="Script" uid="uid://cb5o3yikauhsr" path="res://addons/papershot/papershot.gd" id="3_k0r5x"]
+[ext_resource type="Texture2D" uid="uid://cvkrtw5xxo3v7" path="res://addons/kaykit_space_base_bits/Assets/gltf/spacebits_texture.png" id="1_s2eax"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mh5o3"]
 resource_name = "spacebits_texture"
-albedo_texture = ExtResource("2_h1huf")
+albedo_texture = ExtResource("1_s2eax")
 roughness = 0.6
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ebp8a"]
@@ -41,29 +39,21 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ebp8a")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_a4bk1"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_s2eax"]
 size = Vector3(1.39523, 0.570907, 1.39524)
 
-[node name="roofmodule_solarpanels2" type="StaticBody3D"]
-script = ExtResource("1_uiwfm")
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_uw4du"]
+points = PackedVector3Array(0.697617, 0.0499915, 0.288853, 0.449873, 0.470907, 0.156787, 0.449873, 0.311806, 0.315895, 0.449873, 0.152706, 0.474867, 0.288853, 0.0499915, 0.697482, 0.697617, -0.1, 0.288853, 0.697617, 0.0499915, -0.28899, -0.45001, 0.470907, 0.156787, 0.2782, 0.0999515, 0.647496, 0.449873, 0.470907, -0.34321, 0.288853, -0.1, 0.697482, -0.28899, 0.0499915, 0.697482, 0.697617, -0.1, -0.28899, 0.288853, 0.0499915, -0.697618, 0.449873, 0.439053, -0.375031, -0.697617, 0.0499915, 0.288853, -0.45001, 0.311806, 0.315895, -0.278337, 0.0999515, 0.647496, -0.45001, 0.470907, -0.34321, -0.28899, -0.1, 0.697482, -0.45001, 0.152706, 0.474867, 0.288853, -0.1, -0.697618, -0.28899, 0.0499915, -0.697618, -0.45001, 0.439053, -0.375031, -0.697617, -0.1, 0.288853, -0.697617, 0.0499915, -0.28899, -0.28899, -0.1, -0.697618, -0.697617, -0.1, -0.28899)
+
+[node name="roofmodule_solarpanels" type="StaticBody3D"]
 
 [node name="roofmodule_solarpanels" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_8fnt0")
 skeleton = NodePath("")
 
-[node name="Collision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19209e-07, 0.185453, 0)
-shape = SubResource("BoxShape3D_a4bk1")
+[node name="AABBCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_s2eax")
 disabled = true
 
-[node name="SubViewport" type="SubViewport" parent="."]
-size = Vector2i(1024, 1024)
-render_target_update_mode = 1
-
-[node name="Camera3D" type="Camera3D" parent="SubViewport"]
-transform = Transform3D(0.154251, -0.976206, 0.152405, 0, 0.154251, 0.988032, -0.988032, -0.152405, 0.0237935, 0.142727, 0.285453, 0.285453)
-current = true
-
-[node name="Papershot" type="Node" parent="SubViewport"]
-script = ExtResource("3_k0r5x")
-file_format = 1
+[node name="ConvexCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_uw4du")

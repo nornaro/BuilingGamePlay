@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://dqcr4yjq1rk4l"]
+[gd_scene load_steps=7 format=4 uid="uid://em5si5lv7ucu"]
 
-[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_bi1l7"]
-[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="2_8t6rp"]
-[ext_resource type="Script" uid="uid://cb5o3yikauhsr" path="res://addons/papershot/papershot.gd" id="3_yupcn"]
+[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="1_kv22n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_twqsf"]
 resource_name = "restaurant"
-albedo_texture = ExtResource("2_8t6rp")
+albedo_texture = ExtResource("1_kv22n")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_4gfiv"]
@@ -43,29 +41,21 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_4gfiv")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_fixey"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_kv22n"]
 size = Vector3(1.5, 1.8, 1.5)
 
-[node name="table_round_A_small_decorated2" type="StaticBody3D"]
-script = ExtResource("1_bi1l7")
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2i1eq"]
+points = PackedVector3Array(-0.75, 0.819832, 0, -0.724452, 0.819832, 0.194107, -0.75, 0.979992, 0, -0.724452, 0.819832, -0.194254, -0.421398, -5.96046e-08, -0.0838391, -0.421398, -5.96046e-08, 0.0836923, -0.649569, 0.819832, 0.375, -0.724452, 0.979992, 0.194107, -0.724452, 0.979992, -0.194254, -0.250049, 1.77991, -0.270018, -0.250049, 1.77991, -0.33007, -0.219509, 1.77304, -0.600088, -0.649569, 0.819832, -0.375, -0.357234, -5.96046e-08, -0.238743, -0.357234, -5.96046e-08, 0.238596, -0.530345, 0.819832, 0.530198, -0.649569, 0.979992, 0.375, -0.649569, 0.979992, -0.375, -0.350039, 1.53342, -0.600088, -0.329924, 1.53342, -0.675117, -0.23008, 1.8, -0.270018, -0.23008, 1.8, -0.33007, -0.217013, 1.77304, -0.609779, -0.530345, 0.819832, -0.530345, -0.238743, -5.96046e-08, -0.357234, -0.238743, -5.96046e-08, 0.357087, -0.375, 0.819832, 0.649423, -0.530345, 0.979992, 0.530198, -0.530345, 0.979992, -0.530345, -0.27501, 1.53342, -0.730031, 0.229933, 1.8, -0.270018, -0.375, 0.979992, 0.649423, -0.194254, 0.979992, 0.724305, -0.000146806, 0.979992, 0.75, 0.229933, 1.8, -0.33007, -0.200127, 1.7785, -0.600088, -0.209818, 1.77304, -0.616973, -0.27501, 1.04994, -0.730031, -0.375147, 0.819832, -0.649569, -0.0839859, -5.96046e-08, -0.421398, -0.0839859, -5.96046e-08, 0.421251, -0.194254, 0.819832, 0.724305, -0.200127, 1.53342, -0.75, -0.200127, 1.77304, -0.619616, 0.249902, 1.77991, -0.270018, 0.194107, 0.979992, 0.724305, 0.375, 0.979992, 0.649423, 0.530198, 0.979992, 0.530198, 0.649423, 0.979992, 0.375, -0.000146806, 0.819832, 0.75, 0.249902, 1.77991, -0.33007, 0.219362, 1.77304, -0.600088, 0.216866, 1.77304, -0.609779, 0.19998, 1.7785, -0.600088, -0.200127, 1.04994, -0.75, -0.194254, 0.819832, -0.724452, 0.0836923, -5.96046e-08, -0.421398, 0, 0.819832, -0.75, 0.0836923, -5.96046e-08, 0.421251, 0.19998, 1.53342, -0.75, 0.19998, 1.77304, -0.619616, 0.724305, 0.979992, 0.194107, 0.75, 0.979992, 0, 0.194107, 0.819832, 0.724305, 0.375, 0.819832, 0.649423, 0.530198, 0.819832, 0.530198, 0.649423, 0.819832, 0.375, 0.724305, 0.979992, -0.194254, 0.349892, 1.53342, -0.600088, 0.209671, 1.77304, -0.616973, 0.329777, 1.53342, -0.675117, 0.23845, -5.96046e-08, -0.357234, 0.194107, 0.819832, -0.724452, 0.375, 0.819832, -0.649569, 0.19998, 1.04994, -0.75, 0.23845, -5.96046e-08, 0.357087, 0.274863, 1.53342, -0.730031, 0.724305, 0.819832, 0.194107, 0.75, 0.819832, 0, 0.35694, -5.96046e-08, 0.238596, 0.421104, -5.96046e-08, 0.0836923, 0.724305, 0.819832, -0.194254, 0.649423, 0.979992, -0.375, 0.530198, 0.979992, -0.530345, 0.35694, -5.96046e-08, -0.238743, 0.530198, 0.819832, -0.530345, 0.274863, 1.04994, -0.730031, 0.421104, -5.96046e-08, -0.0838391, 0.649423, 0.819832, -0.375)
+
+[node name="table_round_A_small_decorated" type="StaticBody3D"]
 
 [node name="table_round_A_small_decorated" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_ocpq8")
 skeleton = NodePath("")
 
-[node name="Collision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
-shape = SubResource("BoxShape3D_fixey")
+[node name="AABBCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_kv22n")
 disabled = true
 
-[node name="SubViewport" type="SubViewport" parent="."]
-size = Vector2i(1024, 1024)
-render_target_update_mode = 1
-
-[node name="Camera3D" type="Camera3D" parent="SubViewport"]
-transform = Transform3D(0.154251, -0.976206, 0.152405, 0, 0.154251, 0.988032, -0.988032, -0.152405, 0.0237935, 0.45, 0.9, 0.9)
-current = true
-
-[node name="Papershot" type="Node" parent="SubViewport"]
-script = ExtResource("3_yupcn")
-file_format = 1
+[node name="ConvexCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_2i1eq")

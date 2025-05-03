@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://41rjtk2sdeue"]
+[gd_scene load_steps=7 format=4 uid="uid://bessat5s5spf2"]
 
-[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_n3faw"]
-[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="2_k40id"]
-[ext_resource type="Script" uid="uid://cb5o3yikauhsr" path="res://addons/papershot/papershot.gd" id="3_mftr0"]
+[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="1_x386o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0i04"]
 resource_name = "restaurant"
-albedo_texture = ExtResource("2_k40id")
+albedo_texture = ExtResource("1_x386o")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_wuo7t"]
@@ -43,29 +41,21 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wuo7t")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_oihx3"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_x386o"]
 size = Vector3(2.2, 1.71592, 2.28786)
 
-[node name="stove_multi_decorated2" type="StaticBody3D"]
-script = ExtResource("1_n3faw")
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_eposy"]
+points = PackedVector3Array(1.2, 1.59952, -0.603155, 0.999941, 0.0298976, -0.970206, 0.999941, 0.999891, -0.970206, 1.09857, 1.59952, -0.720728, 1.17351, 1.63916, -0.594869, 1.1733, 1.63899, -0.403617, 1.19914, 1.59952, -0.394211, 0.999941, 0.0298976, 0.969858, 0.969793, 0, -0.970206, 0.969793, 0.0298976, -1.00022, 0.969793, 0.999891, -1.00022, 0.783085, 1.67998, -0.924073, 1.08134, 1.64303, -0.690495, 0.906911, 1.69997, -0.772012, 0.979914, 1.69997, -0.595541, 0.979914, 1.69997, -0.404737, 0.906911, 1.69997, -0.228265, 0.193677, 1.41678, 1.19381, 0.969793, 1.02996, 0.969858, 0.999941, 0.999891, 0.969858, 0.94998, 0.587874, 1.15663, 0.969793, 0.0298976, 0.999867, 0.969793, 0, 0.969858, -0.970067, 0, -0.970206, -0.970067, 0.0298976, -1.00022, 0.81991, 0.17989, -1.03, 0.81991, 0.619956, -1.03, 0.599393, 1.67998, -1.00022, 0.771887, 1.69997, -0.907053, 0.570967, 1.71592, -0.55299, 0.771887, 1.69997, -0.0932245, 0.104092, 1.44533, 1.10423, 0.141778, 1.4114, 1.22785, 0.969793, 0.999891, 0.999867, 0.595302, 1.69997, -0.0202173, 0.919832, 0.59812, 1.18485, -0.970067, 0.0298976, 0.999867, 0.762412, 0.643135, 1.22897, 0.119812, 0.0799509, 1.02988, -0.970067, 0, 0.969858, -1, 0.0298976, -0.970206, -0.970067, 0.999891, -1.00022, -0.820184, 0.17989, -1.03, -0.820184, 0.619956, -1.03, 0.400411, 1.67998, -1.00022, 0.595302, 1.69997, -0.98006, 0.404503, 1.69997, -0.98006, 0.227917, 1.69997, -0.907053, 0.0928936, 1.69997, -0.772012, 0.0198904, 1.69997, -0.595541, 0.290153, 1.70786, -0.45938, 0.0928936, 1.69997, -0.228265, 0.227917, 1.69997, -0.0932245, 0.404503, 1.69997, -0.0202173, -0.430188, 1.61414, 0.371244, 0.0506853, 1.43072, 1.15484, 0.135963, 1.38033, 1.24688, 0.847259, 0.840325, 1.15708, -0.595576, 1.44987, 0.979936, -0.599667, 1.42988, 0.999867, 0.848336, 0.725269, 1.19896, 0.803113, 0.749288, 1.2115, 0.743461, 0.69218, 1.23233, -1, 0.0298976, 0.969858, -0.920106, 0.0799509, 1.02988, -0.920106, 0.59812, 1.18485, -0.950039, 0.587874, 1.15663, 0.124334, 0.707969, 1.25763, -1, 0.999891, -0.970206, -0.970067, 1.02996, -0.970206, 0.216719, 1.67998, -0.924073, -0.173493, 1.63899, -0.59666, 0.0198904, 1.69997, -0.404737, -0.543246, 1.61414, 0.25815, -0.540231, 1.57735, 0.481427, -0.724354, 0.839989, 1.20971, -0.724354, 0.707969, 1.25763, 0.802251, 0.829239, 1.18238, -0.771946, 1.44987, 0.906705, -0.783359, 1.42988, 0.923725, -1, 0.999891, 0.969858, -0.799941, 0.722078, 1.21217, -0.799941, 0.799845, 1.18395, -0.920106, 0.917588, 1.06862, -0.970067, 0.999891, 0.999867, -1, 1.42988, 0.400358, -0.980188, 1.44987, 0.404389, -0.906969, 1.44987, 0.227917, -0.653289, 1.57735, 0.368333, -0.906969, 1.44987, 0.771888, -0.923982, 1.42988, 0.783085, -1, 1.42988, 0.599448, -0.980188, 1.44987, 0.595417)
+
+[node name="stove_multi_decorated" type="StaticBody3D"]
 
 [node name="stove_multi_decorated" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_05ltj")
 skeleton = NodePath("")
 
-[node name="Collision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.857961, 0.113928)
-shape = SubResource("BoxShape3D_oihx3")
+[node name="AABBCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_x386o")
 disabled = true
 
-[node name="SubViewport" type="SubViewport" parent="."]
-size = Vector2i(1024, 1024)
-render_target_update_mode = 1
-
-[node name="Camera3D" type="Camera3D" parent="SubViewport"]
-transform = Transform3D(0.154251, -0.976206, 0.152405, 0, 0.154251, 0.988032, -0.988032, -0.152405, 0.0237935, 0.42898, 0.857961, 0.857961)
-current = true
-
-[node name="Papershot" type="Node" parent="SubViewport"]
-script = ExtResource("3_mftr0")
-file_format = 1
+[node name="ConvexCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_eposy")

@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://cf3qfoieg06hb"]
+[gd_scene load_steps=7 format=4 uid="uid://brikow0kp7ykx"]
 
-[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_8ge40"]
-[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="2_b8uq8"]
-[ext_resource type="Script" uid="uid://cb5o3yikauhsr" path="res://addons/papershot/papershot.gd" id="3_f2fne"]
+[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="1_i3j0v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cdl7o"]
 resource_name = "restaurant"
-albedo_texture = ExtResource("2_b8uq8")
+albedo_texture = ExtResource("1_i3j0v")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_a1f3h"]
@@ -43,29 +41,21 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_a1f3h")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_cyvyy"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_i3j0v"]
 size = Vector3(0.602507, 0.21146, 0.635769)
 
-[node name="food_ingredient_potato_mashed2" type="StaticBody3D"]
-script = ExtResource("1_8ge40")
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6hfdn"]
+points = PackedVector3Array(0.426563, 0.0256302, -0.0729026, 0.393831, 0.0256302, -0.204027, 0.30342, 0.232764, -0.0920081, 0.29534, 0.211858, 0.0183305, 0.386931, 0.0256302, 0.073033, 0.254351, 0.193622, -0.217594, 0.245859, 0.0256302, -0.31978, -0.0434224, 0.208298, -0.245225, 0.0857956, 0.23709, -0.00444669, 0.235715, 0.187123, 0.0996063, 0.298643, 0.0256302, 0.167378, 0.0709335, 0.0256302, -0.419788, 0.0610844, 0.183211, -0.291837, -0.112248, 0.0256302, -0.342432, -0.175884, 0.0256302, -0.122564, -0.0783367, 0.190041, -0.122564, 0.00198966, 0.151811, 0.0501936, 0.115874, 0.163526, 0.130225, 0.182871, 0.0256302, 0.215981, -0.0512664, 0.0256302, 0.102158, 0.0356654, 0.0256302, 0.180011)
+
+[node name="food_ingredient_potato_mashed" type="StaticBody3D"]
 
 [node name="food_ingredient_potato_mashed" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_qix7j")
 skeleton = NodePath("")
 
-[node name="Collision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125369, 0.13136, -0.101903)
-shape = SubResource("BoxShape3D_cyvyy")
+[node name="AABBCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_i3j0v")
 disabled = true
 
-[node name="SubViewport" type="SubViewport" parent="."]
-size = Vector2i(1024, 1024)
-render_target_update_mode = 1
-
-[node name="Camera3D" type="Camera3D" parent="SubViewport"]
-transform = Transform3D(0.154251, -0.976206, 0.152405, 0, 0.154251, 0.988032, -0.988032, -0.152405, 0.0237935, 0.052865, 0.10573, 0.10573)
-current = true
-
-[node name="Papershot" type="Node" parent="SubViewport"]
-script = ExtResource("3_f2fne")
-file_format = 1
+[node name="ConvexCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_6hfdn")

@@ -8,6 +8,9 @@ var cube_scene :PackedScene
 @onready var rc:RayCast3D = $RayCast3D2
 
 
+func _ready() -> void:
+	$Sprite2D.position = $"..".get_viewport().get_visible_rect().size/2
+
 func _physics_process(delta):
 	if !cube:
 		return
@@ -20,13 +23,6 @@ func _physics_process(delta):
 	
 
 func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_pressed("alt"):
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		return
-	if Input.is_action_just_released("alt"):
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		return
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	for i:int in range(1, buttoncount):
 		if Input.is_physical_key_pressed(KEY_0 + i):
 			buttons[i].emit_signal("pressed")

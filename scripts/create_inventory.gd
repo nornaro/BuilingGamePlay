@@ -65,7 +65,6 @@ func _run():
 			
 			grid.add_child(button)
 			grid.add_child(TextureButton.new())
-			print(button.get_parent())
 			button.owner = scene_root
 	
 	print("Inventory UI created successfully!")

@@ -1,17 +1,39 @@
-# Edit file: res://addons/kaykit_dungeon_remastered/Assets/gltf/camera_3d.gd
+# Edit file: res://camera_3d.gd
 @tool
 extends Camera3D
-var papershot:Node
 
-func _update_camera() -> void:
-	var collision:CollisionShape3D = $"../../Collision"
-	if is_inside_tree() and collision and collision.shape:
-		position = collision.shape.size + collision.position
-	pass
-	
+@export var refresh:Button = Button.new()
+@export var capture:Button = Button.new()
+
 func _ready() -> void:
-	get_parent().find_children("", "Papershot", true, false)[0]
-	_update_camera()
-	papershot.take_screenshot()
-	print(get_path())
-	#$"..".queue_free()
+	connect()
+	# Wait for proper initialization
+	await get_tree().process_frame
+	
+	# Get the parent SubViewport
+	var viewport = get_parent()
+	if not viewport is SubViewport:
+		return
+	
+	# Get the viewport texture
+	var viewport_texture = viewport.get_texture()
+	
+	# Wait for rendering to complete
+	await RenderingServer.frame_post_draw
+	
+	# Get the image from the texture
+	var image = viewport_texture.get_image()
+	
+	# Get the path of the scene this script is in
+	var scene_path = get_tree()
+	if scene_path.is_empty():
+		# Fallback for when scene isn't saved yet
+		scene_path = "user://temp_icon"
+	else:
+		# Remove .tscn extension
+		scene_path = scene_path.get_basename()
+	
+	# Save the image with same base name as scene
+	var save_path = scene_path + ".webp"
+	image.save_webp(save_path)
+	print("Saved icon to: ", save_path)

@@ -1,7 +1,7 @@
 extends Button
 
 var scene:PackedScene
-@onready var rc: RayCast3D = $"../../../Node3D/Camera3D/RayCast3D"
+@onready var rc: RayCast3D = %RayCast3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

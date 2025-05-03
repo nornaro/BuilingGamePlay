@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqvsm6ky55s3w"]
+[gd_scene load_steps=2 format=3 uid="uid://dqvsm6ky55s3w"]
 
-[ext_resource type="Script" uid="uid://hwjnnjfd0sp3" path="res://camera_3d.gd" id="1_cogcf"]
 [ext_resource type="Script" uid="uid://cb5o3yikauhsr" path="res://addons/papershot/papershot.gd" id="2_ayfru"]
 
 [node name="MakeIcon" type="SubViewport"]
@@ -8,7 +7,6 @@ render_target_update_mode = 1
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.866026, -0.25, 0.433013, 0, 0.866026, 0.5, -0.5, -0.433013, 0.75, 6, 12, 8)
-script = ExtResource("1_cogcf")
 
 [node name="Papershot" type="Node" parent="."]
 script = ExtResource("2_ayfru")

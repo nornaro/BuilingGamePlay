@@ -26,7 +26,7 @@ func _ready() -> void:
 		push_error("Could not load tscn_files.gd")
 		return
 	
-	var items = IL.new().items
+	var items = FileAccess.open("res://scripts/tscn_files.dat", FileAccess.READ).get_var()
 	if not items:
 		push_error("No items found in tscn_files.gd")
 		return
@@ -65,7 +65,7 @@ func _ready() -> void:
 			
 			grid.add_child(button)
 			#grid.add_child(TextureButton.new())
-			print(button.get_parent())
+			#print(button.get_parent())
 			button.owner = scene_root
 	
 	print("Inventory UI created successfully!")

@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://jvasr7ymfb0y"]
+[gd_scene load_steps=7 format=4 uid="uid://bm5am3128co6w"]
 
-[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_lyvfk"]
-[ext_resource type="Texture2D" uid="uid://cvkrtw5xxo3v7" path="res://addons/kaykit_space_base_bits/Assets/gltf/spacebits_texture.png" id="2_usqsb"]
-[ext_resource type="Script" uid="uid://cb5o3yikauhsr" path="res://addons/papershot/papershot.gd" id="3_nl5qw"]
+[ext_resource type="Texture2D" uid="uid://cvkrtw5xxo3v7" path="res://addons/kaykit_space_base_bits/Assets/gltf/spacebits_texture.png" id="1_a3hps"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgdbj"]
 resource_name = "spacebits_texture"
-albedo_texture = ExtResource("2_usqsb")
+albedo_texture = ExtResource("1_a3hps")
 roughness = 0.6
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_2guc6"]
@@ -41,29 +39,21 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_2guc6")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_yv74k"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_a3hps"]
 size = Vector3(2.93904, 0.6, 2.93904)
 
-[node name="tunnel_diagonal_long_A2" type="StaticBody3D"]
-script = ExtResource("1_lyvfk")
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6un48"]
+points = PackedVector3Array(1.46952, 0.65, 0.903633, 1.36336, 0.8, 1.00979, 1.45197, 0.65, 1.0984, 1.45197, 0.639605, 1.13379, 1.46952, 0.35, 0.903633, 1.26612, 0.589976, 0.608464, 1.26296, 0.65, 0.626588, 1.00979, 0.8, 1.36336, 1.3812, 0.749961, 1.16888, -1.01008, 0.8, -1.36365, 1.39155, 0.725, 1.19391, 1.45197, 0.360337, 1.13379, 1.13378, 0.639605, 1.45197, 1.45197, 0.35, 1.0984, 1.36336, 0.2, 1.00979, 1.26296, 0.35, 0.626588, 1.26612, 0.409965, 0.608464, -0.601559, 0.589976, -1.25922, -0.619971, 0.65, -1.25634, 0.626588, 0.65, 1.26296, 0.903633, 0.65, 1.46952, 1.0984, 0.65, 1.45197, 1.16888, 0.749961, 1.3812, -1.36365, 0.8, -1.01008, -0.903921, 0.65, -1.46952, -1.09869, 0.65, -1.45226, -1.16917, 0.749961, -1.38149, 1.19391, 0.725, 1.39155, 1.39155, 0.275, 1.19391, 1.3812, 0.24998, 1.16888, 1.13378, 0.360337, 1.45197, 1.00979, 0.2, 1.36336, -1.01008, 0.2, -1.36365, -0.619971, 0.35, -1.25634, -0.601559, 0.409965, -1.25922, 0.608464, 0.589976, 1.26612, -1.25634, 0.65, -0.619971, 0.903633, 0.35, 1.46952, -1.38149, 0.749961, -1.16917, -1.45226, 0.65, -1.09869, -1.46952, 0.65, -0.903921, -0.903921, 0.35, -1.46952, -1.13407, 0.639605, -1.45226, -1.1942, 0.725, -1.39184, 1.19391, 0.275, 1.39155, 1.16888, 0.24998, 1.3812, 1.0984, 0.35, 1.45197, 0.626588, 0.35, 1.26296, -1.36365, 0.2, -1.01008, -1.16917, 0.24998, -1.38149, -1.09869, 0.35, -1.45226, 0.608464, 0.409965, 1.26612, -1.25922, 0.589976, -0.601559, -1.39184, 0.725, -1.1942, -1.45226, 0.639605, -1.13407, -1.46952, 0.35, -0.903921, -1.13407, 0.360337, -1.45226, -1.25634, 0.35, -0.619971, -1.45226, 0.35, -1.09869, -1.38149, 0.24998, -1.16917, -1.1942, 0.275, -1.39184, -1.25922, 0.409965, -0.601559, -1.45226, 0.360337, -1.13407, -1.39184, 0.275, -1.1942)
+
+[node name="tunnel_diagonal_long_A" type="StaticBody3D"]
 
 [node name="tunnel_diagonal_long_A" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_plxw0")
 skeleton = NodePath("")
 
-[node name="Collision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("BoxShape3D_yv74k")
+[node name="AABBCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_a3hps")
 disabled = true
 
-[node name="SubViewport" type="SubViewport" parent="."]
-size = Vector2i(1024, 1024)
-render_target_update_mode = 1
-
-[node name="Camera3D" type="Camera3D" parent="SubViewport"]
-transform = Transform3D(0.154251, -0.976206, 0.152405, 0, 0.154251, 0.988032, -0.988032, -0.152405, 0.0237935, 0.15, 0.3, 0.3)
-current = true
-
-[node name="Papershot" type="Node" parent="SubViewport"]
-script = ExtResource("3_nl5qw")
-file_format = 1
+[node name="ConvexCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_6un48")
