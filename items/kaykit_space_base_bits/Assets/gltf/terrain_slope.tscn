@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://cxkh4yyxsidv6"]
+[gd_scene load_steps=8 format=4 uid="uid://dkei0shskpj48"]
 
-[ext_resource type="Texture2D" uid="uid://cvkrtw5xxo3v7" path="res://addons/kaykit_space_base_bits/Assets/gltf/spacebits_texture.png" id="1_sxcpq"]
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_vd763"]
+[ext_resource type="Texture2D" uid="uid://cvkrtw5xxo3v7" path="res://addons/kaykit_space_base_bits/Assets/gltf/spacebits_texture.png" id="2_2nmlq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vnnwb"]
 resource_name = "spacebits_texture"
-albedo_texture = ExtResource("1_sxcpq")
+albedo_texture = ExtResource("2_2nmlq")
 roughness = 0.6
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_5h6ov"]
@@ -41,21 +42,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5h6ov")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_sxcpq"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_vd763"]
 size = Vector3(2, 2, 2)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vd763"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2nmlq"]
 points = PackedVector3Array(1, 1, 1, 1, 1, -1, 0.0998434, 1, 1, 1, -1, 1, 1, -1, -1, 0.0998434, 1, -1, 0.0084182, 0.979248, 1, -1, -1, 1, -1, -1, -1, 0.0084182, 0.979248, -1, -0.0708692, 0.929131, 1, -1, 0, 1, -1, 0, -1, -0.0708692, 0.929131, -1)
 
 [node name="terrain_slope" type="StaticBody3D"]
+script = ExtResource("1_vd763")
 
 [node name="terrain_slope" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_wmrl8")
 skeleton = NodePath("")
 
 [node name="AABBCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_sxcpq")
+shape = SubResource("BoxShape3D_vd763")
 disabled = true
 
 [node name="ConvexCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_vd763")
+shape = SubResource("ConvexPolygonShape3D_2nmlq")
+disabled = true

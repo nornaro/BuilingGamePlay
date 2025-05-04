@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://dghepy1bp2vh0"]
+[gd_scene load_steps=8 format=4 uid="uid://dvvvrjw0v0x4"]
 
-[ext_resource type="Texture2D" uid="uid://dbbdwvj0o7c6v" path="res://addons/kaykit_halloween_bits/Assets/gltf/halloweenbits_texture.png" id="1_ayxq3"]
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_0xf7m"]
+[ext_resource type="Texture2D" uid="uid://dbbdwvj0o7c6v" path="res://addons/kaykit_halloween_bits/Assets/gltf/halloweenbits_texture.png" id="2_uh8na"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bc2lu"]
 resource_name = "HalloweenBits"
-albedo_texture = ExtResource("1_ayxq3")
+albedo_texture = ExtResource("2_uh8na")
 roughness = 0.6
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_i687q"]
@@ -41,21 +42,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_i687q")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ayxq3"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_0xf7m"]
 size = Vector3(2, 1.1312, 2)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0xf7m"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_uh8na"]
 points = PackedVector3Array(-1, 0, -1, -1, 0, 1, -1, 0.149926, -1, 1, 0, -1, -1, 0.149926, 1, 1, 0, 1, -0.89213, 0.754057, 0.198708, -0.842013, 0.851165, 0.199099, -0.467698, 0.956911, -0.226899, -0.372749, 0.967208, -0.318324, 1, 0.149926, -1, -0.816366, 0.854155, 0.243931, -0.842013, 0.851165, 0.229052, -0.881754, 0.755275, 0.258222, 1, 0.149926, 1, 0.365113, 1.12466, 0.136061, -0.81715, 0.860688, 0.214174, -0.419342, 1.00242, -0.203211, -0.351018, 1.00984, -0.269186, 0.374511, 1.12466, 0.0851605, 0.384495, 1.12466, 0.113156, 0.442052, 1.03409, 0.0929914, -0.256265, 0.988468, -0.275842, 0.335748, 1.12466, 0.130579, 0.355129, 1.1312, 0.10787, -0.321261, 1.01681, -0.114526, -0.323806, 1.01925, -0.151919, 0.344949, 1.12466, 0.0796789, -0.289546, 1.02501, -0.135082)
 
 [node name="plaque_candles" type="StaticBody3D"]
+script = ExtResource("1_0xf7m")
 
 [node name="plaque_candles" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_oh6q1")
 skeleton = NodePath("")
 
 [node name="AABBCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_ayxq3")
+shape = SubResource("BoxShape3D_0xf7m")
 disabled = true
 
 [node name="ConvexCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_0xf7m")
+shape = SubResource("ConvexPolygonShape3D_uh8na")
+disabled = true

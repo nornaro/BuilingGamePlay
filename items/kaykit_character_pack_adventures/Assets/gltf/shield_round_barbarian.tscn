@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=4 uid="uid://dtw4ub0p3od4y"]
+[gd_scene load_steps=8 format=4 uid="uid://c1ajndhqrtscl"]
 
-[ext_resource type="Texture2D" uid="uid://by775ae3qinsr" path="res://addons/kaykit_character_pack_adventures/Assets/gltf/barbarian_texture.png" id="1_p2yck"]
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_opmkr"]
+[ext_resource type="Texture2D" uid="uid://by775ae3qinsr" path="res://addons/kaykit_character_pack_adventures/Assets/gltf/barbarian_texture.png" id="2_usk6p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5oh7o"]
 resource_name = "barbarian_texture"
 cull_mode = 2
-albedo_texture = ExtResource("1_p2yck")
+albedo_texture = ExtResource("2_usk6p")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_wyg27"]
@@ -42,21 +43,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wyg27")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_p2yck"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_opmkr"]
 size = Vector3(0.882607, 0.882607, 0.331946)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_opmkr"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_usk6p"]
 points = PackedVector3Array(-0.441301, -1.46329e-05, -0.0463151, -0.407693, -1.46329e-05, 0.0084676, -0.409335, 0.17312, -0.0366973, -0.378319, 0.160075, -0.0878408, -0.407693, -1.46329e-05, -0.095769, -0.378319, -0.16019, -0.0878408, -0.409335, -0.173236, -0.0366973, -0.299268, -1.46329e-05, 0.0779695, -0.378319, 0.160075, 0.0154535, -0.378319, -0.16019, 0.0154535, -0.287691, 0.287593, 0.0453143, -0.311536, 0.311438, -0.00686896, -0.287691, 0.287593, -0.0626589, -0.046391, 0.0377398, -0.144768, -0.046391, -0.0378554, -0.144768, -0.287691, -0.287709, -0.0626589, -0.311536, -0.311554, -0.00686896, -0.287691, -0.287709, 0.0453143, -0.119308, -1.46329e-05, 0.152085, -0.211923, 0.211825, 0.0988298, -0.279656, 0.114026, 0.0771897, -0.279656, -0.114142, 0.0771897, -0.211923, -0.211941, 0.0988298, -0.160173, 0.378221, 0.0736155, -0.173218, 0.409237, 0.0265011, -0.160173, 0.378221, -0.0329931, 0.0463103, 0.0377398, -0.144768, 0.0463103, -0.0378554, -0.144768, -0.160173, -0.378337, -0.0329931, -0.173218, -0.409352, 0.0265011, -0.160173, -0.378337, 0.0736155, -0.105571, -0.0610092, 0.151793, -0.0609917, -0.105589, 0.162451, 2.83122e-06, -1.46329e-05, 0.187177, -0.0609917, 0.105473, 0.162451, -0.105571, 0.0608936, 0.151793, -0.114124, 0.279558, 0.115466, -0.114124, -0.279674, 0.115466, 2.83122e-06, 0.407595, 0.0882372, 2.83122e-06, 0.441289, 0.0434622, 2.83122e-06, 0.407595, -0.0183714, 0.160092, 0.378221, -0.0329931, 0.407613, -1.46329e-05, -0.095769, 0.243981, 0.318695, -0.0524887, 0.318712, 0.243964, -0.0712695, 0.378238, 0.160075, -0.0878408, 0.378238, -0.16019, -0.0878408, 0.28761, -0.287709, -0.0626589, 0.160092, -0.378337, -0.0329931, -8.35657e-05, -0.407711, -0.0183714, -8.35657e-05, -0.441318, 0.0434622, -8.35657e-05, -0.407711, 0.0882372, -8.35657e-05, -0.119326, 0.166772, 0.119227, -1.46329e-05, 0.152085, 0.060911, 0.105473, 0.162451, -8.35657e-05, 0.11921, 0.166772, 0.060911, -0.105589, 0.162451, 2.83122e-06, 0.29917, 0.123069, 2.83122e-06, -0.299285, 0.123069, 0.160092, 0.378221, 0.0736155, 0.114044, 0.279558, 0.115466, 0.173138, 0.409237, 0.0265011, 0.26774, 0.342367, 0.00369118, 0.441306, -1.46329e-05, -0.0463151, 0.342385, 0.267636, -0.0162918, 0.409254, 0.17312, -0.0366973, 0.409254, -0.173236, -0.0366973, 0.311455, -0.311554, -0.00686896, 0.173138, -0.409352, 0.0265011, 0.160092, -0.378337, 0.0736155, 0.114044, -0.279674, 0.115466, 0.105491, -0.0610092, 0.151793, 0.211842, -0.211941, 0.0988298, 0.299187, -0.000101, 0.077937, 0.211842, 0.211825, 0.0988298, 0.105491, 0.0608936, 0.151793, 0.243981, 0.318609, 0.0549972, 0.318626, 0.24405, 0.0351116, 0.407613, -1.46329e-05, 0.0084676, 0.378238, 0.160075, 0.0154535, 0.378238, -0.16019, 0.0154535, 0.28761, -0.287709, 0.0453143, 0.279576, -0.114142, 0.0771897, 0.279576, 0.114026, 0.0771897)
 
 [node name="shield_round_barbarian" type="StaticBody3D"]
+script = ExtResource("1_opmkr")
 
 [node name="shield_round_barbarian" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_gbbyo")
 skeleton = NodePath("")
 
 [node name="AABBCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_p2yck")
+shape = SubResource("BoxShape3D_opmkr")
 disabled = true
 
 [node name="ConvexCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_opmkr")
+shape = SubResource("ConvexPolygonShape3D_usk6p")
+disabled = true

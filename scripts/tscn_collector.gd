@@ -30,9 +30,9 @@ func _run():
 			continue
 			
 		for file in files:
-			if !file.ends_with(".gltf"):
+			if !(file.ends_with(".gltf") || file.ends_with(".glb")):
 				continue
-			tscn_files[folder].append(file.replace(".gltf", ""))
+			tscn_files[folder].append(file)
 
 	# Write output
 	var output_file = FileAccess.open("res://scripts/tscn_files.dat", FileAccess.WRITE)
@@ -42,36 +42,3 @@ func _run():
 		
 	output_file.store_var(tscn_files)
 	output_file.close()
-	
-#"""# Auto-generated file - do not edit manually!
-#extends Object
-#class_name IL
-#
-#var tscn_files:Dictionary = """ + str(tscn_files)
-	#)
-	#output_file.close()
-	#print("Successfully wrote tscn_files.gd")
-	
-	#@tool
-#extends EditorScript
-#
-#func _run():
-	#var tscn_files = {}
-	#var base = "res://addons/"
-	#for folder in DirAccess.get_directories_at(base):
-		#if !folder.begins_with("kaykit_"):
-			#continue
-		#tscn_files[folder] = []
-		#for file in DirAccess.get_files_at(base+folder+"/Assets/gltf/"):
-			#if !file.ends_with(".gltf"):
-				#continue
-			#tscn_files[folder].append(file.replace(".gltf", ""))
-#
-	#var output_file = FileAccess.open("res://scripts/tscn_files.gd", FileAccess.WRITE)
-	#output_file.store_string(
-		#"
-#extends Object
-#class_name IL
-#
-#var tscn_files:Dictionary =" + str(tscn_files)
-	#)

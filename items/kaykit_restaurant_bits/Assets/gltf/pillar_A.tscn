@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://dk6pqh2mnt8ld"]
+[gd_scene load_steps=8 format=4 uid="uid://damhtb6xhhgaj"]
 
-[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="1_u5v8k"]
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_8tslf"]
+[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="2_soukr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p2uyu"]
 resource_name = "restaurant"
-albedo_texture = ExtResource("1_u5v8k")
+albedo_texture = ExtResource("2_soukr")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_57s22"]
@@ -39,21 +40,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_57s22")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_u5v8k"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_8tslf"]
 size = Vector3(0.6, 4.1, 0.6)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8tslf"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_soukr"]
 points = PackedVector3Array(-0.3, 0, -0.3, 0.3, 0, -0.3, -0.3, 0, 0.3, -0.3, 3.99967, -0.3, 0.3, 0, 0.3, 0.3, 3.99967, -0.3, -0.3, 3.99967, 0.3, -0.200039, 4.1, -0.200039, 0.3, 3.99967, 0.3, 0.19998, 4.1, -0.200039, -0.200039, 4.1, 0.19998, 0.19998, 4.1, 0.19998)
 
 [node name="pillar_A" type="StaticBody3D"]
+script = ExtResource("1_8tslf")
 
 [node name="pillar_A" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_wk8vc")
 skeleton = NodePath("")
 
 [node name="AABBCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_u5v8k")
+shape = SubResource("BoxShape3D_8tslf")
 disabled = true
 
 [node name="ConvexCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_8tslf")
+shape = SubResource("ConvexPolygonShape3D_soukr")
+disabled = true

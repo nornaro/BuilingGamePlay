@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://sfvi6ttyx8j1"]
+[gd_scene load_steps=8 format=4 uid="uid://sduo1mmue52t"]
 
-[ext_resource type="Texture2D" uid="uid://dbbdwvj0o7c6v" path="res://addons/kaykit_halloween_bits/Assets/gltf/halloweenbits_texture.png" id="1_ijsml"]
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_msa2x"]
+[ext_resource type="Texture2D" uid="uid://dbbdwvj0o7c6v" path="res://addons/kaykit_halloween_bits/Assets/gltf/halloweenbits_texture.png" id="2_sxg0j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3wdeo"]
 resource_name = "HalloweenBits"
-albedo_texture = ExtResource("1_ijsml")
+albedo_texture = ExtResource("2_sxg0j")
 roughness = 0.6
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_4maub"]
@@ -41,21 +42,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_4maub")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ijsml"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_msa2x"]
 size = Vector3(4, 2, 0.169559)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_msa2x"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sxg0j"]
 points = PackedVector3Array(1.7498, 2, 0, 1.7498, 1.79992, 0.0847794, 1.82341, 1.79992, 0.0423897, 2, 1.44518, 0.0261575, 2, 1.44518, -0.0261741, 1.82341, 1.79992, -0.0423897, 1.7498, 1.79992, -0.0847794, -1.7502, 2, 0, 1.7498, 0, 0.052315, 2, 0.399961, 0.052315, 2, 1.39996, 0.052315, -1.7502, 1.79992, 0.0847794, -0.889194, 1.57596, 0.0847794, 2, 1.39996, -0.0523316, 2, 0.399961, -0.0523316, 1.7498, 0, -0.0523316, -0.889194, 1.57596, -0.0847794, -1.7502, 1.79992, -0.0847794, -1.82381, 1.79992, -0.0423897, -2, 1.44518, -0.0261741, -2, 1.44518, 0.0261575, -1.82381, 1.79992, 0.0423731, 1.79522, 0, 0.0261575, -1.7502, 0, 0.052315, 2, 0.354542, 0.0261575, -2, 1.39996, 0.052315, -2, 0.399961, 0.052315, 2, 0.354542, -0.0261741, 1.79522, 0, -0.0261741, -1.7502, 0, -0.0523316, -2, 0.399961, -0.0523316, -2, 1.39996, -0.0523316, -1.79561, 0, 0.0261575, -2, 0.354542, 0.0261575, -1.79561, 0, -0.0261741, -2, 0.354542, -0.0261741)
 
 [node name="fence_seperate_broken" type="StaticBody3D"]
+script = ExtResource("1_msa2x")
 
 [node name="fence_seperate_broken" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_vd60q")
 skeleton = NodePath("")
 
 [node name="AABBCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_ijsml")
+shape = SubResource("BoxShape3D_msa2x")
 disabled = true
 
 [node name="ConvexCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_msa2x")
+shape = SubResource("ConvexPolygonShape3D_sxg0j")
+disabled = true

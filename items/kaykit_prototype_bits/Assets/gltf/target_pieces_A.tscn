@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://b6j3gykluxta0"]
+[gd_scene load_steps=8 format=4 uid="uid://vd5iu5s0vgx3"]
 
-[ext_resource type="Texture2D" uid="uid://tn1iprvxegcn" path="res://addons/kaykit_prototype_bits/Assets/gltf/prototypebits_texture.png" id="1_8fthb"]
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_dpc1e"]
+[ext_resource type="Texture2D" uid="uid://tn1iprvxegcn" path="res://addons/kaykit_prototype_bits/Assets/gltf/prototypebits_texture.png" id="2_ikodt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xgwjn"]
 resource_name = "prototype_texture"
-albedo_texture = ExtResource("1_8fthb")
+albedo_texture = ExtResource("2_ikodt")
 roughness = 0.4
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_11rt2"]
@@ -39,21 +40,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_11rt2")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_8fthb"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_dpc1e"]
 size = Vector3(0.433019, 0.5, 0.2)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dpc1e"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ikodt"]
 points = PackedVector3Array(-6.28266e-06, -2.17309e-08, 7.57251e-10, 0.406606, 0.23473, 7.57251e-10, 0.433013, 0.249951, 0.161179, 0.115666, 0.066758, 0.19998, -6.28266e-06, -2.17309e-08, 0.19998, -6.28266e-06, 0.469509, 7.57251e-10, 0.234729, 0.406568, 7.57251e-10, 0.249988, 0.432997, 0.161179, 0.394992, 0.228025, 0.19998, -6.28266e-06, 0.456098, 0.19998, -6.28266e-06, 0.5, 0.161179, 0.228032, 0.394969, 0.19998)
 
 [node name="target_pieces_A" type="StaticBody3D"]
+script = ExtResource("1_dpc1e")
 
 [node name="target_pieces_A" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_mmv11")
 skeleton = NodePath("")
 
 [node name="AABBCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_8fthb")
+shape = SubResource("BoxShape3D_dpc1e")
 disabled = true
 
 [node name="ConvexCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_dpc1e")
+shape = SubResource("ConvexPolygonShape3D_ikodt")
+disabled = true

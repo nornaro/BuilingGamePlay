@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://dkkxqeedxbvpg"]
+[gd_scene load_steps=8 format=4 uid="uid://cgd8ugw455g2k"]
 
-[ext_resource type="Texture2D" uid="uid://r05knra18sb4" path="res://addons/kaykit_furniture_bits/Assets/gltf/furniturebits_texture.png" id="1_0in2r"]
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_nysi4"]
+[ext_resource type="Texture2D" uid="uid://r05knra18sb4" path="res://addons/kaykit_furniture_bits/Assets/gltf/furniturebits_texture.png" id="2_fq7g5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_578ew"]
 resource_name = "furniture_texture"
-albedo_texture = ExtResource("1_0in2r")
+albedo_texture = ExtResource("2_fq7g5")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_msmr5"]
@@ -39,21 +40,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_msmr5")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_0in2r"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_nysi4"]
 size = Vector3(0.26, 0.5, 0.365)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nysi4"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fq7g5"]
 points = PackedVector3Array(0.109488, 0.25, 0.187507, -0.109512, 0.25, 0.187507, 0.109488, -0.25, 0.187507, 0.130001, 0.229983, 0.167535, 0.130001, 0.229983, -0.157485, 0.109462, 0.25, -0.1592, -0.109486, 0.25, -0.1592, -0.129999, 0.229983, -0.157485, -0.129999, 0.229983, 0.167535, -0.109512, -0.25, 0.187507, 0.109462, -0.25, -0.1592, 0.130001, -0.230031, -0.157485, 0.130001, -0.230031, 0.167535, 0.109997, 0.229983, -0.177457, -0.110021, 0.229983, -0.177457, -0.129999, -0.230031, -0.157485, -0.129999, -0.230031, 0.167535, -0.109486, -0.25, -0.1592, 0.109997, -0.230031, -0.177457, -0.110021, -0.230031, -0.177457)
 
 [node name="book_single" type="StaticBody3D"]
+script = ExtResource("1_nysi4")
 
 [node name="book_single" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_76c5q")
 skeleton = NodePath("")
 
 [node name="AABBCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_0in2r")
+shape = SubResource("BoxShape3D_nysi4")
 disabled = true
 
 [node name="ConvexCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_nysi4")
+shape = SubResource("ConvexPolygonShape3D_fq7g5")
+disabled = true

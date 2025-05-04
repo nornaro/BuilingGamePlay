@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://bii80x8udnct8"]
+[gd_scene load_steps=8 format=4 uid="uid://6ah1v0cqfqh6"]
 
-[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="1_ikuey"]
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_mebro"]
+[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="2_1rjhy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifpa7"]
 resource_name = "restaurant"
-albedo_texture = ExtResource("1_ikuey")
+albedo_texture = ExtResource("2_1rjhy")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_fn4ke"]
@@ -41,21 +42,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fn4ke")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ikuey"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_mebro"]
 size = Vector3(4, 4, 0.5)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mebro"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1rjhy"]
 points = PackedVector3Array(1.89977, 4, 0.25, 1.89977, 0, 0.25, 1.99961, 3.89977, 0.136697, 1.89977, 4, -0.25, -1.90016, 4, 0.25, 1.89977, 0, -0.25, 1.99961, 0.0998434, 0.136697, -1.90016, 0, 0.25, 1.99961, 3.89977, -0.136747, -1.90016, 4, -0.25, -2, 3.89977, 0.136697, 1.99961, 0.0998434, -0.136747, -1.90016, 0, -0.25, -2, 0.0998434, 0.136697, -2, 3.89977, -0.136747, -2, 0.0998434, -0.136747)
 
 [node name="wall_window_closed" type="StaticBody3D"]
+script = ExtResource("1_mebro")
 
 [node name="wall_window_closed" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_3gem1")
 skeleton = NodePath("")
 
 [node name="AABBCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_ikuey")
+shape = SubResource("BoxShape3D_mebro")
 disabled = true
 
 [node name="ConvexCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_mebro")
+shape = SubResource("ConvexPolygonShape3D_1rjhy")
+disabled = true

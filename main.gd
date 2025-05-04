@@ -20,12 +20,6 @@ func _ready() -> void:
 		InventoryTabs.remove_child(child)
 		child.queue_free()
 	
-	# Load items data
-	var items_script = load("res://scripts/tscn_files.gd")
-	if not items_script:
-		push_error("Could not load tscn_files.gd")
-		return
-	
 	var items = FileAccess.open("res://scripts/tscn_files.dat", FileAccess.READ).get_var()
 	if not items:
 		push_error("No items found in tscn_files.gd")
@@ -34,7 +28,7 @@ func _ready() -> void:
 	# Create tabs for each category
 	for category in items:
 		var inventory = InventoryPanel.instantiate()
-		inventory.name = category.capitalize()
+		inventory.name = category.split("_")[1].capitalize()
 		InventoryTabs.add_child(inventory)
 		var grid = inventory.find_child("InventoryGrid", true, false)
 		
@@ -43,7 +37,7 @@ func _ready() -> void:
 		grid.owner = scene_root
 		
 		# Add items to grid
-		for item in items[category]:
+		for item:String in items[category]:
 			var button = TextureButton.new()
 			button.name = item
 			TextureButton.SIZE_SHRINK_CENTER
@@ -53,13 +47,12 @@ func _ready() -> void:
 			
 			# Set tooltip with formatted name
 			var item_name = item.get_basename().replace("_", " ").capitalize()
+			print(item)
 			button.tooltip_text = item_name
 			button.name = item
-			
-			# Try to load icon texture
-			#var icon_path = "res://addons/kaykit_character_pack_adventures/Assets/gltf/%s_icon.webp" % item
-			#var icon_path = "res://addons/"
-			var icon_path = "res://icon.svg"
+			button.set_script(load("res://button.gd"))
+			button.path = "res://items/"+category+"/Assets/gltf/"+item.split(".")[0]+".tscn"
+			var icon_path = "res://items/"+category+"/Assets/gltf/"+item.split(".")[0]+".webp"
 			if ResourceLoader.exists(icon_path):
 				button.texture_normal = load(icon_path)
 			

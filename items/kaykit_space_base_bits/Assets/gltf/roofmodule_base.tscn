@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://c1pj5llsye6ts"]
+[gd_scene load_steps=8 format=4 uid="uid://caqbtllouf7p1"]
 
-[ext_resource type="Texture2D" uid="uid://cvkrtw5xxo3v7" path="res://addons/kaykit_space_base_bits/Assets/gltf/spacebits_texture.png" id="1_t0tfb"]
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_vgow2"]
+[ext_resource type="Texture2D" uid="uid://cvkrtw5xxo3v7" path="res://addons/kaykit_space_base_bits/Assets/gltf/spacebits_texture.png" id="2_yl2ya"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hp0id"]
 resource_name = "spacebits_texture"
-albedo_texture = ExtResource("1_t0tfb")
+albedo_texture = ExtResource("2_yl2ya")
 roughness = 0.6
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_3rcnk"]
@@ -39,21 +40,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_3rcnk")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_t0tfb"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_vgow2"]
 size = Vector3(1.39523, 0.2, 1.39524)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vgow2"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yl2ya"]
 points = PackedVector3Array(0.697617, 0.0499999, 0.288853, 0.637252, 0.0999803, 0.288853, 0.288853, 0.0499999, 0.697482, 0.697617, -0.1, 0.288853, 0.697617, 0.0499999, -0.28899, 0.2782, 0.0999803, 0.647496, 0.637252, 0.0999803, -0.28899, 0.288853, -0.1, 0.697482, -0.28899, 0.0499999, 0.697482, 0.697617, -0.1, -0.28899, 0.288853, 0.0499999, -0.697618, -0.278337, 0.0999803, 0.647496, 0.2782, 0.0999803, -0.647632, -0.28899, -0.1, 0.697482, -0.637389, 0.0999803, 0.288853, -0.697617, 0.0499999, 0.288853, 0.288853, -0.1, -0.697618, -0.28899, 0.0499999, -0.697618, -0.278337, 0.0999803, -0.647632, -0.697617, -0.1, 0.288853, -0.637389, 0.0999803, -0.28899, -0.697617, 0.0499999, -0.28899, -0.28899, -0.1, -0.697618, -0.697617, -0.1, -0.28899)
 
 [node name="roofmodule_base" type="StaticBody3D"]
+script = ExtResource("1_vgow2")
 
 [node name="roofmodule_base" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_cpohc")
 skeleton = NodePath("")
 
 [node name="AABBCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_t0tfb")
+shape = SubResource("BoxShape3D_vgow2")
 disabled = true
 
 [node name="ConvexCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_vgow2")
+shape = SubResource("ConvexPolygonShape3D_yl2ya")
+disabled = true

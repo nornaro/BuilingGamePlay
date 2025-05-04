@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://ivbpblnkxd5f"]
+[gd_scene load_steps=8 format=4 uid="uid://bsmyui7pcxkfc"]
 
-[ext_resource type="Texture2D" uid="uid://tn1iprvxegcn" path="res://addons/kaykit_prototype_bits/Assets/gltf/prototypebits_texture.png" id="1_ys2tb"]
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_ca5kf"]
+[ext_resource type="Texture2D" uid="uid://tn1iprvxegcn" path="res://addons/kaykit_prototype_bits/Assets/gltf/prototypebits_texture.png" id="2_tyv0x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wxye"]
 resource_name = "prototype_texture"
-albedo_texture = ExtResource("1_ys2tb")
+albedo_texture = ExtResource("2_tyv0x")
 roughness = 0.4
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_sb87v"]
@@ -39,21 +40,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_sb87v")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ys2tb"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ca5kf"]
 size = Vector3(0.250006, 0.5, 0.2)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ca5kf"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tyv0x"]
 points = PackedVector3Array(-6.31956e-06, -0.5, 0.161179, -6.31956e-06, -0.469558, 7.57251e-10, 0.25, -0.433046, 0.161179, -6.31956e-06, -0.456147, 0.19998, 0.234754, -0.406617, 7.57251e-10, -6.31956e-06, 0, 7.57251e-10, 0.228049, -0.395018, 0.19998, -6.31956e-06, -4.89354e-05, 0.19998, 0.0667779, -0.115701, 0.19998)
 
 [node name="target_pieces_C" type="StaticBody3D"]
+script = ExtResource("1_ca5kf")
 
 [node name="target_pieces_C" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_lk6cv")
 skeleton = NodePath("")
 
 [node name="AABBCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_ys2tb")
+shape = SubResource("BoxShape3D_ca5kf")
 disabled = true
 
 [node name="ConvexCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_ca5kf")
+shape = SubResource("ConvexPolygonShape3D_tyv0x")
+disabled = true

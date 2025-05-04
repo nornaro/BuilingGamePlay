@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://mu38lmlskr1p"]
+[gd_scene load_steps=8 format=4 uid="uid://btodvdgt0mrnm"]
 
-[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="1_ichnv"]
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_hua4e"]
+[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="2_hd7bd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pf8uh"]
 resource_name = "restaurant"
-albedo_texture = ExtResource("1_ichnv")
+albedo_texture = ExtResource("2_hd7bd")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_djff0"]
@@ -41,21 +42,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_djff0")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ichnv"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_hua4e"]
 size = Vector3(1.05208, 0.283246, 0.902527)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hua4e"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hd7bd"]
 points = PackedVector3Array(-0.123232, 0.104374, -0.450516, -0.124468, 0.0243857, -0.424278, -0.30438, 0.104374, -0.410673, -0.124468, 0.184391, -0.424278, 0.328555, 0.104374, -0.331781, -0.0980015, 0.00439549, -0.370741, -0.292949, 0.0243857, -0.386997, 0.321655, 0.0243857, -0.306426, 0.295909, 0.00439549, -0.269057, -0.419515, 0.0243857, -0.2854, -0.440421, 0.104374, -0.301302, -0.419515, 0.184391, -0.2854, -0.292949, 0.184391, -0.386997, -0.0980015, 0.204381, -0.370741, 0.295909, 0.204381, -0.269057, 0.321655, 0.184391, -0.306426, 0.456975, 0.184391, -0.216492, 0.478293, 0.104374, -0.231952, 0.456975, 0.0243857, -0.216492, -0.242693, 0.00439549, -0.33346, 0.0686255, -0.0372208, 0.00021717, 0.410736, 0.00439549, -0.185483, -0.496341, 0.0243857, -0.10827, -0.522086, 0.104374, -0.113659, -0.350413, 0.00439549, -0.242112, -0.350413, 0.204381, -0.242112, -0.242693, 0.204381, -0.33346, -0.496341, 0.184391, -0.10827, 0.0686255, 0.246025, 0.00021717, 0.410736, 0.204381, -0.185483, 0.502185, 0.184391, -0.0543797, 0.528549, 0.104374, -0.0551748, 0.502185, 0.0243857, -0.0543797, 0.448737, 0.00439549, -0.0428949, 0.412486, 0.00439549, 0.122663, 0.331542, 0.00439549, 0.249614, 0.146584, 0.00439549, 0.345644, -0.0666946, 0.00439549, 0.371176, -0.218595, 0.00439549, 0.341492, -0.348148, 0.00439549, 0.231061, -0.413439, 0.00439549, 0.0772535, -0.414263, 0.00439549, -0.0887457, -0.497782, 0.0243857, 0.0849395, -0.523528, 0.104374, 0.0898868, -0.497782, 0.184391, 0.0849395, -0.414263, 0.204381, -0.0887457, 0.146584, 0.204381, 0.345644, 0.331542, 0.204381, 0.249614, 0.412486, 0.204381, 0.122663, 0.448737, 0.204381, -0.0428949, -0.413439, 0.204381, 0.0772535, -0.348148, 0.204381, 0.231061, -0.218595, 0.204381, 0.341492, -0.0666946, 0.204381, 0.371176, 0.485502, 0.104374, 0.146516, 0.461095, 0.184391, 0.136621, 0.461095, 0.0243857, 0.136621, 0.369954, 0.0243857, 0.283008, 0.153484, 0.0243857, 0.395117, -0.0968686, 0.0243857, 0.425684, -0.273176, 0.0243857, 0.393527, -0.423634, 0.0243857, 0.264632, -0.444952, 0.104374, 0.280004, -0.423634, 0.184391, 0.264632, 0.153484, 0.184391, 0.395117, 0.369954, 0.184391, 0.283008, -0.0968686, 0.184391, 0.425684, -0.273176, 0.184391, 0.393527, 0.38777, 0.104374, 0.302267, 0.16131, 0.104374, 0.420207, -0.0976925, 0.104374, 0.452011, -0.284504, 0.104374, 0.417203)
 
 [node name="food_ingredient_steak" type="StaticBody3D"]
+script = ExtResource("1_hua4e")
 
 [node name="food_ingredient_steak" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_jqqn3")
 skeleton = NodePath("")
 
 [node name="AABBCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_ichnv")
+shape = SubResource("BoxShape3D_hua4e")
 disabled = true
 
 [node name="ConvexCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_hua4e")
+shape = SubResource("ConvexPolygonShape3D_hd7bd")
+disabled = true

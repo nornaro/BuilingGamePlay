@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://dvvrm040u4r3b"]
+[gd_scene load_steps=8 format=4 uid="uid://cy8c1ra4gwxk0"]
 
-[ext_resource type="Texture2D" uid="uid://dbbdwvj0o7c6v" path="res://addons/kaykit_halloween_bits/Assets/gltf/halloweenbits_texture.png" id="1_lgbo5"]
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_8ggj0"]
+[ext_resource type="Texture2D" uid="uid://dbbdwvj0o7c6v" path="res://addons/kaykit_halloween_bits/Assets/gltf/halloweenbits_texture.png" id="2_x3vv5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m53uq"]
 resource_name = "HalloweenBits"
-albedo_texture = ExtResource("1_lgbo5")
+albedo_texture = ExtResource("2_x3vv5")
 roughness = 0.6
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_sti0g"]
@@ -41,21 +42,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_sti0g")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_lgbo5"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_8ggj0"]
 size = Vector3(0.64002, 0.925192, 0.64002)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8ggj0"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_x3vv5"]
 points = PackedVector3Array(-0.32001, 0.637835, -0.32001, 0.32001, 0.637835, -0.32001, -0.21996, -2.98023e-08, -0.21996, -0.32001, 0.637835, 0.32001, -0.228042, 0.820501, -0.052625, -0.157311, 0.843413, -0.126989, -0.0571984, 0.875744, -0.126989, 0.32001, 0.637835, 0.32001, 0.219897, -2.98023e-08, -0.21996, 0, 0.925192, -0.0641524, 0.0460469, 0.913419, -0.0641524, -0.21996, -2.98023e-08, 0.219897, -0.228042, 0.820501, 0.0525623, -0.0571984, 0.875744, 0.126926, -0.157311, 0.843413, 0.126926, -0.210187, 0.836893, -0.0434783, -0.151673, 0.85582, -0.104999, -0.0461095, 0.913419, -0.0641524, 0.219897, -2.98023e-08, 0.219897, 0.0460469, 0.913419, 0.0640897, 0, 0.925192, 0.0640897, -0.210187, 0.836893, 0.0434156, -0.0461095, 0.913419, 0.0640897, -0.151673, 0.85582, 0.104937)
 
 [node name="lantern_standing" type="StaticBody3D"]
+script = ExtResource("1_8ggj0")
 
 [node name="lantern_standing" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_kjd8k")
 skeleton = NodePath("")
 
 [node name="AABBCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_lgbo5")
+shape = SubResource("BoxShape3D_8ggj0")
 disabled = true
 
 [node name="ConvexCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_8ggj0")
+shape = SubResource("ConvexPolygonShape3D_x3vv5")
+disabled = true

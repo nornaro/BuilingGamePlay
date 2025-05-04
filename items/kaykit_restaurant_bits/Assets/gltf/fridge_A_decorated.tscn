@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://cq7v63sxb2d32"]
+[gd_scene load_steps=8 format=4 uid="uid://dcw2pxohxpfs8"]
 
-[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="1_j4pwg"]
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_0xm4l"]
+[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="2_6j3no"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rnq7e"]
 resource_name = "restaurant"
-albedo_texture = ExtResource("1_j4pwg")
+albedo_texture = ExtResource("2_6j3no")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_yvwut"]
@@ -41,21 +42,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yvwut")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_j4pwg"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_0xm4l"]
 size = Vector3(2, 2.5, 1.50913)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0xm4l"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6j3no"]
 points = PackedVector3Array(-1, 0.249853, -0.850062, -0.956147, 0.258663, -0.956127, -0.893305, 0.106695, -0.956127, -0.926782, 0.0731695, -0.850062, -1, 0.249853, 0.432609, -1, 2.2499, -0.850062, -0.794049, 0.205805, -1, -0.956147, 2.24109, -0.956127, -0.741386, 0.0438038, -0.956127, -0.75, 0, -0.850062, -0.926782, 0.0731695, 0.432609, -0.893305, 0.106695, 0.485641, -0.956147, 0.258663, 0.485641, -1, 2.2499, 0.432609, -0.926782, 2.42659, -0.850062, -0.893305, 2.39306, -0.956127, 0.793853, 0.205805, -1, -0.794049, 2.29395, -1, 0.74119, 0.0438038, -0.956127, -0.75, 0, 0.432609, 0.75, 0, -0.850062, -0.741386, 0.0438038, 0.485641, -0.794049, 0.205805, 0.49997, -0.956147, 2.24109, 0.485641, -0.893305, 2.39306, 0.485641, -0.926782, 2.42659, 0.432609, -0.75, 2.5, -0.850062, -0.741386, 2.45595, -0.956127, 0.955951, 0.258663, -0.956127, 0.893109, 0.106695, -0.956127, 0.793853, 2.29395, -1, 0.75, 0, 0.432609, 0.926586, 0.0731695, -0.850062, 0.74119, 0.0438038, 0.485641, 0.793853, 0.205805, 0.49997, 0.120791, 0.644332, 0.509129, -0.794049, 2.29395, 0.49997, -0.741386, 2.45595, 0.485641, -0.75, 2.5, 0.432609, 0.75, 2.5, -0.850062, 0.74119, 2.45595, -0.956127, 1, 0.249853, -0.850062, 0.955951, 2.24109, -0.956127, 0.893109, 2.39306, -0.956127, 0.926586, 0.0731695, 0.432609, 0.893109, 0.106695, 0.485641, 0.955951, 0.258663, 0.485641, 0.793853, 2.29395, 0.49997, 0.74119, 2.45595, 0.485641, 0.75, 2.5, 0.432609, 0.926586, 2.42659, -0.850062, 1, 0.249853, 0.432609, 1, 2.2499, -0.850062, 0.955951, 2.24109, 0.485641, 0.893109, 2.39306, 0.485641, 0.926586, 2.42659, 0.432609, 1, 2.2499, 0.432609)
 
 [node name="fridge_A_decorated" type="StaticBody3D"]
+script = ExtResource("1_0xm4l")
 
 [node name="fridge_A_decorated" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_wo3th")
 skeleton = NodePath("")
 
 [node name="AABBCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_j4pwg")
+shape = SubResource("BoxShape3D_0xm4l")
 disabled = true
 
 [node name="ConvexCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_0xm4l")
+shape = SubResource("ConvexPolygonShape3D_6j3no")
+disabled = true

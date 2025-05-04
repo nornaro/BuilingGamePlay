@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://336yovq2egsh"]
+[gd_scene load_steps=8 format=4 uid="uid://c6spt364dwvvi"]
 
-[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="1_10sb8"]
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_x1ouf"]
+[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="2_nl143"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tsqax"]
 resource_name = "restaurant"
-albedo_texture = ExtResource("1_10sb8")
+albedo_texture = ExtResource("2_nl143")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_t8kk1"]
@@ -41,21 +42,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_t8kk1")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_10sb8"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_x1ouf"]
 size = Vector3(2, 1.80163, 2.0419)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_x1ouf"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nl143"]
 points = PackedVector3Array(1, 0.949839, 0.99993, -1, 0.949839, 0.99993, -0.000195742, 0.54987, 1.0419, 1, 0.849847, 0.99993, 1, 0.999924, 0.949961, -1, 0.849847, 0.99993, -1, 0.999924, 0.949961, -0.000195742, 0.249893, 1.0419, 0.859828, 0.139848, 0.949961, 1, 0, 0.799857, 1, 1.19991, -0.850095, 0.0311277, 1.80145, -0.340019, 0.0311277, 1.77835, -0.223693, -1, 0, 0.799857, -0.860023, 0.139848, 0.949961, -0.0313234, 1.77835, -0.223693, -0.0313234, 1.80145, -0.340019, -1, 1.19991, -0.850095, -0.000195742, 0.190814, 1.02391, 0.859828, 0.0999924, 0.909987, 1, 0, -1, 1, 1.19991, -1, 0.0311277, 1.77835, -0.456545, -0.860023, 0.0999924, 0.909987, -1, 0, -1, -0.0313234, 1.77835, -0.456545, -1, 1.19991, -1, 0.0311277, 1.71239, -0.555083, -0.0313234, 1.71239, -0.555083)
 
 [node name="kitchencounter_sink_backsplash" type="StaticBody3D"]
+script = ExtResource("1_x1ouf")
 
 [node name="kitchencounter_sink_backsplash" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_xcstn")
 skeleton = NodePath("")
 
 [node name="AABBCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_10sb8")
+shape = SubResource("BoxShape3D_x1ouf")
 disabled = true
 
 [node name="ConvexCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_x1ouf")
+shape = SubResource("ConvexPolygonShape3D_nl143")
+disabled = true

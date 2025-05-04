@@ -33,7 +33,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if !cube:
 		return
 	if Input.is_action_just_released("lmb") and rc.is_colliding():
-		cube.get_node("Collision").disabled = false
+		cube.get_node("AABBCollision").disabled = false
+		cube.get_node("AABBCollision").global_position.y += cube.get_node("AABBCollision").shape.size.y/2
 		cube.remove_from_group("temp")
 		set_cube(cube_scene)
 	cube.visible = Input.is_action_pressed("rmb")

@@ -8,15 +8,9 @@ func _run():
 		push_error("No GLB files found in Kaykit addons")
 		return
 	
-	# Get the Papershot node from the current scene
-	var papershot = get_scene().find_child("Papershot")
-	if not papershot:
-		push_error("Papershot node not found in scene")
-		return
-	
 	for glb_path in glb_files:
 		print("Processing: ", glb_path)
-		convert_glb_to_tscn(glb_path, papershot)
+		convert_glb_to_tscn(glb_path)
 
 func find_glb_files_in_addons() -> Array[String]:
 	var glb_files: Array[String] = []
@@ -57,7 +51,7 @@ func _find_glb_files_recursive(path: String, glb_files: Array[String]) -> void:
 	
 	dir.list_dir_end()
 
-func convert_glb_to_tscn(glb_path: String, papershot: Node) -> void:
+func convert_glb_to_tscn(glb_path: String) -> void:
 	# Load the GLB scene
 	var glb_scene = load(glb_path)
 	if not glb_scene:
@@ -69,11 +63,6 @@ func convert_glb_to_tscn(glb_path: String, papershot: Node) -> void:
 	
 	# Use Papershot to render the icon
 	var icon_path = glb_path.get_basename() + "_icon.webp"
-	var result = await papershot.capture_node(temp_scene, icon_path)
-	
-	if not result:
-		push_error("Failed to capture icon for: " + glb_path)
-		return
 	
 	# Save the TSCN scene
 	var tscn_path = glb_path.get_basename() + ".tscn"

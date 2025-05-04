@@ -26,7 +26,7 @@ window/size/viewport_height=1080
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gamedev_assistant/plugin.cfg", "res://addons/scene_texture/plugin.cfg")
+enabled=PackedStringArray("res://addons/gamedev_assistant/plugin.cfg", "res://addons/scene-preview-extractor/plugin.cfg", "res://addons/scene_texture/plugin.cfg")
 
 [input]
 

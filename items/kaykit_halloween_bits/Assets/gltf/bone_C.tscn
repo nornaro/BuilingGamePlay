@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://d1gps32772e6i"]
+[gd_scene load_steps=8 format=4 uid="uid://chlisn6aiapgw"]
 
-[ext_resource type="Texture2D" uid="uid://dbbdwvj0o7c6v" path="res://addons/kaykit_halloween_bits/Assets/gltf/halloweenbits_texture.png" id="1_oo44s"]
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_825q4"]
+[ext_resource type="Texture2D" uid="uid://dbbdwvj0o7c6v" path="res://addons/kaykit_halloween_bits/Assets/gltf/halloweenbits_texture.png" id="2_g1p1b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8eiws"]
 resource_name = "HalloweenBits"
-albedo_texture = ExtResource("1_oo44s")
+albedo_texture = ExtResource("2_g1p1b")
 roughness = 0.6
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_lu8mu"]
@@ -41,21 +42,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lu8mu")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_oo44s"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_825q4"]
 size = Vector3(1.10699, 0.27608, 0.200666)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_825q4"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_g1p1b"]
 points = PackedVector3Array(0.471359, 0.13804, 0.0380472, 0.470708, 0.109827, 0.08513, 0.517628, 0.105854, 0.0742874, 0.530522, 0.123015, 0.0380472, 0.471359, 0.13804, -0.0380669, -0.471467, 0.13804, 0.0380472, 0.465291, 0.0245384, 0.100314, 0.526188, 0.0346725, 0.08513, -0.470817, 0.109827, 0.08513, 0.553494, 0.0401314, 0.0380472, 0.530522, 0.123015, -0.0380669, 0.517628, 0.105854, -0.0743071, 0.470708, 0.109827, -0.0851496, -0.471467, 0.13804, -0.0380669, -0.530631, 0.123015, 0.0380472, -0.517736, 0.105854, 0.0742874, 0.465291, -0.0245648, 0.100314, -0.465399, 0.0245384, 0.100314, 0.526188, -0.0346989, 0.08513, -0.526297, 0.0346725, 0.08513, 0.553494, 0.0401314, -0.0380669, 0.553494, -0.0401578, 0.0380472, 0.526188, 0.0346725, -0.0851496, 0.465291, 0.0245384, -0.100333, -0.470817, 0.109827, -0.0851496, -0.517736, 0.105854, -0.0743071, -0.530631, 0.123015, -0.0380669, -0.553495, 0.0401314, 0.0380472, 0.470708, -0.109854, 0.08513, -0.465399, -0.0245648, 0.100314, 0.517628, -0.105881, 0.0742874, -0.526297, -0.0346989, 0.08513, 0.553494, -0.0401578, -0.0380669, 0.530522, -0.123041, 0.0380472, 0.526188, -0.0346989, -0.0851496, 0.465291, -0.0245648, -0.100333, -0.465399, 0.0245384, -0.100333, -0.526297, 0.0346725, -0.0851496, -0.553495, 0.0401314, -0.0380669, -0.553495, -0.0401578, 0.0380472, 0.471359, -0.13804, 0.0380472, -0.470817, -0.109854, 0.08513, -0.517736, -0.105881, 0.0742874, 0.530522, -0.123041, -0.0380669, 0.517628, -0.105881, -0.0743071, 0.470708, -0.109854, -0.0851496, -0.465399, -0.0245648, -0.100333, -0.526297, -0.0346989, -0.0851496, -0.553495, -0.0401578, -0.0380669, -0.530631, -0.123041, 0.0380472, 0.471359, -0.13804, -0.0380669, -0.471467, -0.13804, 0.0380472, -0.470817, -0.109854, -0.0851496, -0.517736, -0.105881, -0.0743071, -0.530631, -0.123041, -0.0380669, -0.471467, -0.13804, -0.0380669)
 
 [node name="bone_C" type="StaticBody3D"]
+script = ExtResource("1_825q4")
 
 [node name="bone_C" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_mg343")
 skeleton = NodePath("")
 
 [node name="AABBCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_oo44s")
+shape = SubResource("BoxShape3D_825q4")
 disabled = true
 
 [node name="ConvexCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_825q4")
+shape = SubResource("ConvexPolygonShape3D_g1p1b")
+disabled = true

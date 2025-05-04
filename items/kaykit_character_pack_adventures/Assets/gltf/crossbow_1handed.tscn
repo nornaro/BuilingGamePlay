@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=4 uid="uid://bqv7m23l1bg1v"]
+[gd_scene load_steps=8 format=4 uid="uid://4qle6jovd022"]
 
-[ext_resource type="Texture2D" uid="uid://r7bm82mefxjk" path="res://addons/kaykit_character_pack_adventures/Assets/gltf/rogue_texture.png" id="1_t3hyl"]
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_cy3xk"]
+[ext_resource type="Texture2D" uid="uid://r7bm82mefxjk" path="res://addons/kaykit_character_pack_adventures/Assets/gltf/rogue_texture.png" id="2_hgorm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q3r75"]
 resource_name = "rogue_texture"
 cull_mode = 2
-albedo_texture = ExtResource("1_t3hyl")
+albedo_texture = ExtResource("2_hgorm")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ogy4a"]
@@ -42,21 +43,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ogy4a")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_t3hyl"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_cy3xk"]
 size = Vector3(0.911413, 0.405872, 1.22188)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cy3xk"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hgorm"]
 points = PackedVector3Array(0.456955, 0.0953066, 0.629992, 0.393167, 0.141114, 0.687044, 0.398341, 0.12701, 0.715749, 0.453743, 0.0743694, 0.634537, 0.0808273, -0.0774751, -0.182006, 0.0339006, -0.0588025, -0.258433, 0.0217675, -0.0286878, -0.258433, 0.12026, 0.205555, 0.194511, 0.11348, 0.222162, 0.211973, 0.0887674, 0.234478, 0.190683, 0.243822, 0.16078, 0.74589, 0.243822, 0.140558, 0.784283, 0.125078, 0.0792958, 0.905921, 0.103042, 0.0706746, 0.925775, 0.112409, 0.0471152, 0.925417, 0.368989, 0.0743694, 0.731776, 0.103042, 0.0307866, 0.908433, 0.0550444, 0.0142593, 0.913695, -8.04663e-07, -0.151212, 0.141765, -8.04663e-07, -0.171236, 0.00577423, 0.0541523, -0.142869, 0.00589386, 0.0545984, -0.143584, -0.182006, 0.0566503, -0.0775149, -0.222312, 0.0221244, -0.0885993, -0.258433, -8.04663e-07, -0.0462878, -0.277689, -8.04663e-07, -0.0195502, -0.258433, 0.0956369, 0.217831, 0.173221, -0.0881445, 0.234478, 0.190683, 0.0722628, 0.234636, 0.209581, 0.0487994, 0.188312, 0.789904, 0.0550444, 0.103888, 0.91537, 0.0550444, 0.0771107, 0.941803, 0.0550444, 0.0402024, 0.941324, -0.00232038, 0.0115577, 0.914413, -0.0551352, 0.0142593, 0.913695, -0.451336, 0.0743694, 0.635375, -0.0541539, -0.142869, 0.00589386, -0.0546891, -0.143584, -0.182006, -8.04663e-07, -0.167144, -0.182125, 0.0368447, -0.127216, -0.222312, -8.04663e-07, -0.0980548, -0.258433, -8.04663e-07, -0.142988, -0.222312, -0.0339914, -0.0588025, -0.258433, -0.0218583, -0.0286878, -0.258433, -0.0222152, -0.0885993, -0.258433, -0.0716399, 0.234636, 0.209581, -0.095014, 0.217831, 0.173221, -0.112768, 0.222162, 0.211973, -0.454458, 0.0935188, 0.63071, -0.390759, 0.139326, 0.687762, -0.0488902, 0.188312, 0.789904, -0.00232038, 0.106192, 0.916207, -0.00232038, 0.0779053, 0.944195, -0.00232038, 0.038931, 0.943477, -0.0551352, 0.0402024, 0.941324, -0.1125, 0.0471152, 0.925417, -0.103132, 0.0307866, 0.908433, -0.366582, 0.0743694, 0.732494, -0.395934, 0.125223, 0.716467, -0.0809181, -0.0774751, -0.182006, -0.0567411, -0.0775149, -0.222312, -0.0369355, -0.127216, -0.222312, -0.0537078, -0.0104125, -0.182006, -0.119548, 0.205555, 0.194511, -0.241415, 0.158992, 0.746727, -0.241415, 0.13877, 0.785, -0.0551352, 0.103888, 0.91537, -0.0551352, 0.0771107, 0.941803, -0.103132, 0.0706746, 0.925775, -0.125168, 0.0792958, 0.905921)
 
 [node name="crossbow_1handed" type="StaticBody3D"]
+script = ExtResource("1_cy3xk")
 
 [node name="crossbow_1handed" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_aohwg")
 skeleton = NodePath("")
 
 [node name="AABBCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_t3hyl")
+shape = SubResource("BoxShape3D_cy3xk")
 disabled = true
 
 [node name="ConvexCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_cy3xk")
+shape = SubResource("ConvexPolygonShape3D_hgorm")
+disabled = true

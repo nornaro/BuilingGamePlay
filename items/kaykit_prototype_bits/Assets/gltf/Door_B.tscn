@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://buo7gpdfbflag"]
+[gd_scene load_steps=8 format=4 uid="uid://gij8op1y5vm5"]
 
-[ext_resource type="Texture2D" uid="uid://tn1iprvxegcn" path="res://addons/kaykit_prototype_bits/Assets/gltf/prototypebits_texture.png" id="1_carpg"]
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_6tg4x"]
+[ext_resource type="Texture2D" uid="uid://tn1iprvxegcn" path="res://addons/kaykit_prototype_bits/Assets/gltf/prototypebits_texture.png" id="2_g1etk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_trs85"]
 resource_name = "prototype_texture"
-albedo_texture = ExtResource("1_carpg")
+albedo_texture = ExtResource("2_g1etk")
 roughness = 0.4
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_83h3o"]
@@ -39,21 +40,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_83h3o")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_carpg"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_6tg4x"]
 size = Vector3(1.6, 2.8, 0.535693)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6tg4x"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_g1etk"]
 points = PackedVector3Array(-3.57628e-07, 0, -0.100028, 0.129992, 0.129914, -0.15, 1.59984, 0, -0.100028, -3.57628e-07, 0, 0.0999657, -3.57628e-07, 2.8, -0.100028, 1.46985, 0.129914, -0.15, 0.129992, 2.66981, -0.15, 1.59984, 0, 0.0999657, 1.59984, 2.8, -0.100028, 1.35223, 0, 0.199963, 0.129992, 0.129914, 0.14999, 0.17823, 0.999843, 0.385693, -3.57628e-07, 2.8, 0.0999657, 1.46985, 2.66981, -0.15, 1.42161, 0.999843, 0.385693, 1.40611, 0, 0.199963, 1.59984, 2.8, 0.0999657, 1.35223, 2.79973, 0.199963, 0.129992, 2.66981, 0.14999, 1.42819, 2.45548, 0.226286, 1.40611, 2.79973, 0.199963)
 
 [node name="Door_B" type="StaticBody3D"]
+script = ExtResource("1_6tg4x")
 
 [node name="Door_B" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_ryav3")
 skeleton = NodePath("")
 
 [node name="AABBCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_carpg")
+shape = SubResource("BoxShape3D_6tg4x")
 disabled = true
 
 [node name="ConvexCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_6tg4x")
+shape = SubResource("ConvexPolygonShape3D_g1etk")
+disabled = true

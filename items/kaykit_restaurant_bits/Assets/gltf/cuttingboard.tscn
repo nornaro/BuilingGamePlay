@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://bvt34uajauuan"]
+[gd_scene load_steps=8 format=4 uid="uid://d4i1eqstkbkry"]
 
-[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="1_m1cnc"]
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_m6es7"]
+[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="2_ryjf5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fpqp"]
 resource_name = "restaurant"
-albedo_texture = ExtResource("1_m1cnc")
+albedo_texture = ExtResource("2_ryjf5")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ajtbj"]
@@ -41,21 +42,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ajtbj")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_m1cnc"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_m6es7"]
 size = Vector3(1.5, 0.15, 1)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_m6es7"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ryjf5"]
 points = PackedVector3Array(-0.75, 0, -0.5, -0.75, 0, 0.5, -0.75, 0.0999902, -0.5, 0.75, 0, -0.5, -0.75, 0.0999902, 0.5, 0.75, 0, 0.5, -0.700078, 0.149985, -0.450078, 0.75, 0.0999902, -0.5, -0.700078, 0.149985, 0.44998, 0.75, 0.0999902, 0.5, 0.699932, 0.149985, -0.450078, 0.699932, 0.149985, 0.44998)
 
 [node name="cuttingboard" type="StaticBody3D"]
+script = ExtResource("1_m6es7")
 
 [node name="cuttingboard" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_odir2")
 skeleton = NodePath("")
 
 [node name="AABBCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_m1cnc")
+shape = SubResource("BoxShape3D_m6es7")
 disabled = true
 
 [node name="ConvexCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_m6es7")
+shape = SubResource("ConvexPolygonShape3D_ryjf5")
+disabled = true

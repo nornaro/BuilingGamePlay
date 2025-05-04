@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://blttmexaxub0q"]
+[gd_scene load_steps=8 format=4 uid="uid://bf5sxb1aeqjem"]
 
-[ext_resource type="Texture2D" uid="uid://dbbdwvj0o7c6v" path="res://addons/kaykit_halloween_bits/Assets/gltf/halloweenbits_texture.png" id="1_jbcie"]
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_y848c"]
+[ext_resource type="Texture2D" uid="uid://dbbdwvj0o7c6v" path="res://addons/kaykit_halloween_bits/Assets/gltf/halloweenbits_texture.png" id="2_2lixj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7pl8p"]
 resource_name = "HalloweenBits"
-albedo_texture = ExtResource("1_jbcie")
+albedo_texture = ExtResource("2_2lixj")
 roughness = 0.6
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_wbtut"]
@@ -39,21 +40,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wbtut")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_jbcie"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_y848c"]
 size = Vector3(4, 2.2, 0.5)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y848c"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2lixj"]
 points = PackedVector3Array(1.7498, 2.2, 0, 2, 1.99994, 0.25, 2, 1.99994, -0.25, -1.7502, 2.2, 0, 2, 0, 0.25, -2, 1.99994, 0.25, 2, 0, -0.25, -2, 1.99994, -0.25, -2, 0, 0.25, -2, 0, -0.25)
 
 [node name="fence_gate" type="StaticBody3D"]
+script = ExtResource("1_y848c")
 
 [node name="fence_gate" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_8epai")
 skeleton = NodePath("")
 
 [node name="AABBCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_jbcie")
+shape = SubResource("BoxShape3D_y848c")
 disabled = true
 
 [node name="ConvexCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_y848c")
+shape = SubResource("ConvexPolygonShape3D_2lixj")
+disabled = true

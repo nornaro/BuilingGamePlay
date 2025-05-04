@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://n73u2f20vjci"]
+[gd_scene load_steps=8 format=4 uid="uid://dlgifq0bjd2on"]
 
-[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="1_p8yhl"]
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_tpxp6"]
+[ext_resource type="Texture2D" uid="uid://c2sfgwcqfb7q0" path="res://addons/kaykit_restaurant_bits/Assets/gltf/restaurantbits_texture.png" id="2_iovrt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gl5lm"]
 resource_name = "restaurant"
-albedo_texture = ExtResource("1_p8yhl")
+albedo_texture = ExtResource("2_iovrt")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_nyrs7"]
@@ -41,21 +42,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_nyrs7")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_p8yhl"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_tpxp6"]
 size = Vector3(1, 0.25, 1.5)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tpxp6"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iovrt"]
 points = PackedVector3Array(0.5, 0.229982, 0.099354, 0.5, 0.0999902, 0.099354, 0.5, 0.229982, -0.0995987, 0.479933, 0.25, 0.0953896, 0.406911, 0.25, 0.271877, 0.423845, 0.229982, 0.283183, 0.470634, 0.0292678, 0.0936276, 0.5, 0.0999902, -0.0995987, 0.423845, 0.0999902, 0.283183, 0.398982, 0.0292678, 0.266592, 0.479933, 0.25, -0.0954875, 0.423845, 0.229982, -0.283281, 0.406911, 0.25, -0.271975, 0.271829, 0.25, 0.406813, -9.78708e-05, 0.245326, 0.854493, 0.07361, 0.230741, 0.852584, 0.060787, 0.211409, 0.968579, 0.0785043, 0.180477, 0.977976, 0.399961, 0, 0.0795321, 0.470634, 0.0292678, -0.0937255, 0.339076, 0, 0.226507, 0.398982, 0.0292678, -0.26669, 0.423845, 0.0999902, -0.283281, 0.060787, 0.151625, 0.963293, 0.266543, 0.0292678, 0.399031, 0.283183, 0.229982, -0.423943, 0.271829, 0.25, -0.407058, 0.0954385, 0.25, 0.479933, -0.0955364, 0.25, 0.479933, -0.271926, 0.25, 0.406813, -0.407009, 0.25, 0.271877, -0.0737079, 0.230741, 0.852584, -0.0608849, 0.211409, 0.968579, -9.78708e-05, 0.216915, 0.981059, -9.78708e-05, 0.178274, 1, 0.399961, 0, -0.07963, 0.339076, 0, -0.226605, 0.226507, 0, 0.338978, 0.226507, 0, -0.339223, 0.266543, 0.0292678, -0.399129, 0.283183, 0.0999902, -0.423943, -9.78708e-05, 0.144039, 0.974746, 0.0994518, 0.229982, -0.5, 0.0954385, 0.25, -0.480031, -0.423943, 0.229982, 0.283183, -0.480031, 0.25, 0.0953896, -0.0786022, 0.180477, 0.977976, -0.0608849, 0.151625, 0.963293, 0.0794832, 0, 0.399912, 0.0794832, 0, -0.40001, 0.0935787, 0.0292678, -0.470781, 0.0994518, 0.0999902, -0.5, -0.226605, 0, 0.338978, -0.0795811, 0, 0.399912, -0.0995497, 0.229982, -0.5, -0.0955364, 0.25, -0.480031, -0.423943, 0.0999902, 0.283183, -0.5, 0.229982, 0.099354, -0.480031, 0.25, -0.0954875, -0.39908, 0.0292678, 0.266592, -0.266641, 0.0292678, 0.399031, -0.0795811, 0, -0.40001, -0.0936766, 0.0292678, -0.470781, -0.0995497, 0.0999902, -0.5, -0.339174, 0, 0.226507, -0.283281, 0.229982, -0.423943, -0.271926, 0.25, -0.407058, -0.5, 0.0999902, 0.099354, -0.470732, 0.0292678, 0.0936276, -0.5, 0.229982, -0.0995987, -0.407009, 0.25, -0.271975, -0.226605, 0, -0.339223, -0.266641, 0.0292678, -0.399129, -0.283281, 0.0999902, -0.423943, -0.400059, 0, 0.0795321, -0.423943, 0.229982, -0.283281, -0.5, 0.0999902, -0.0995987, -0.470732, 0.0292678, -0.0937255, -0.39908, 0.0292678, -0.26669, -0.339174, 0, -0.226605, -0.423943, 0.0999902, -0.283281, -0.400059, 0, -0.07963)
 
 [node name="pan_B" type="StaticBody3D"]
+script = ExtResource("1_tpxp6")
 
 [node name="pan_B" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_mwtns")
 skeleton = NodePath("")
 
 [node name="AABBCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_p8yhl")
+shape = SubResource("BoxShape3D_tpxp6")
 disabled = true
 
 [node name="ConvexCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_tpxp6")
+shape = SubResource("ConvexPolygonShape3D_iovrt")
+disabled = true

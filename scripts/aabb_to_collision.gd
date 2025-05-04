@@ -42,8 +42,11 @@ func process_glb(path):
 	
 	# Add cube.gd script to StaticBody3D
 	var script = load("res://cube.gd")
-	if script:
-		static_body.set_script(script)
+	if !script:
+		printerr("cube.gd not found")
+		return
+	static_body.set_script(script)
+	static_body.request_screen()
 	
 	# Try to find a MeshInstance3D by type
 	var mesh_node: MeshInstance3D = null
@@ -68,6 +71,9 @@ func process_glb(path):
 	var aabb = mesh.get_aabb()
 	var shape = BoxShape3D.new()
 	shape.size = aabb.size
+	var col_aabb = CollisionShape3D.new()
+	col_aabb.shape = shape
+	col_aabb.name = "aabb_collision"
 	
 	var col_shape = CollisionShape3D.new()
 	col_shape.name = "Collision"
@@ -78,13 +84,14 @@ func process_glb(path):
 	# Add to static body
 	static_body.add_child(mesh_copy)
 	static_body.add_child(col_shape)
+	static_body.add_child(col_aabb)
 	
 	# Set owner AFTER adding to scene tree
 	mesh_copy.owner = static_body
 	col_shape.owner = static_body
 
 	# Save scene
-	var save_path = path.get_basename() + ".tscn"
+	var save_path = (path.get_basename() + ".tscn").replace("addons","items")
 	var packed_scene = PackedScene.new()
 	packed_scene.pack(static_body)
 	var err = ResourceSaver.save(packed_scene, save_path)

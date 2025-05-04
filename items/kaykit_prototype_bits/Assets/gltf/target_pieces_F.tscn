@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://b47fahad8xllt"]
+[gd_scene load_steps=8 format=4 uid="uid://c7jloufavl5a"]
 
-[ext_resource type="Texture2D" uid="uid://tn1iprvxegcn" path="res://addons/kaykit_prototype_bits/Assets/gltf/prototypebits_texture.png" id="1_0c65m"]
+[ext_resource type="Script" uid="uid://dl2hv0kpehb7p" path="res://cube.gd" id="1_tsymv"]
+[ext_resource type="Texture2D" uid="uid://tn1iprvxegcn" path="res://addons/kaykit_prototype_bits/Assets/gltf/prototypebits_texture.png" id="2_uoekv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u067m"]
 resource_name = "prototype_texture"
-albedo_texture = ExtResource("1_0c65m")
+albedo_texture = ExtResource("2_uoekv")
 roughness = 0.4
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_0of8x"]
@@ -39,21 +40,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_0of8x")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_0c65m"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_tsymv"]
 size = Vector3(0.25, 0.5, 0.2)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tsymv"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_uoekv"]
 points = PackedVector3Array(-0.25, 0.432997, 0.161179, -0.234779, 0.406568, 1.24176e-08, -0.228074, 0.394969, 0.19998, 0, 0.456098, 0.19998, 0, 0.5, 0.161179, 0, 0.469509, 1.24176e-08, -2.44677e-05, -2.17309e-08, 1.24176e-08, -0.066807, 0.115652, 0.19998, 0, -2.17309e-08, 0.19998)
 
 [node name="target_pieces_F" type="StaticBody3D"]
+script = ExtResource("1_tsymv")
 
 [node name="target_pieces_F" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_gjb57")
 skeleton = NodePath("")
 
 [node name="AABBCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_0c65m")
+shape = SubResource("BoxShape3D_tsymv")
 disabled = true
 
 [node name="ConvexCollision" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_tsymv")
+shape = SubResource("ConvexPolygonShape3D_uoekv")
+disabled = true
